@@ -1,0 +1,80 @@
+window {
+    width: 100%;
+	max-width: 100%;
+}
+
+
+
+#menu_link {
+    text-align: center;
+    font-size: 2em;
+}
+
+table
+{
+    width: 100%;
+    border-spacing: 3px;
+}
+
+#lessonchooser table td{
+    text-align:center;
+    border:1px black solid;
+}
+th {
+    background-color: blue;
+}
+
+#header {
+    background-color: #abcdef;
+    border: solid black 3pt;
+    border-radius: 25px;
+    font-size: 2em;
+    text-align: center;
+    font-family:Arial;
+    text-shadow: 0px 1px 1px #fff;
+    //background-image: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#999));
+}
+
+.destination {
+    border: solid black 1pt;
+    height: auto;
+    height:50px;
+    font-size: 1.5em;
+    text-align: center;
+    font-family:Arial;
+}
+#sourcetable {
+    display: flex;
+    flex-wrap: wrap;
+}
+.source {
+    font-size: 1.5em;
+    text-align: center;
+    font-family: Arial;
+    cursor: pointer;
+}
+
+.emphasized {
+    display: inline;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#menu {
+    background-color: #abcdef;
+    border: solid black 3pt;
+    border-radius: 5px;
+    text-align: center;
+    font-family:Arial;
+    text-shadow: 0px 1px 1px #fff;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#999));
+}
+* {
+	cursor : pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
