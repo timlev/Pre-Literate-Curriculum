@@ -18,8 +18,8 @@ if not args.noconvert:
 		print(week)
 		print(name)
 		os.system("pdftoppm -f 10 -l 13 -png '" + f + "' " + week + name + "-story")
+originalfiles = {'1 Work Places.pdf' : [11,12],'3 Job Duties.pdf' : [11,12],'2 Jobs in My Community.pdf' : [12,13],'5 Interviews and Applications.pdf' : [10,11]}
 
-originalfiles = {'5 Housing Ads.pdf': [9,10], '3 Settings.pdf': [12,13], '1 Rooms in my house.pdf': [12,13], '2 Furniture in my house.pdf': [12,13], '4 Problems in my apartment.pdf': [12,13]}
 newfiles = []
 
 for f in originalfiles:
