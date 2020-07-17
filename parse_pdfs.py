@@ -18,13 +18,15 @@ if not args.noconvert:
 		print(week)
 		print(name)
 		os.system("pdftoppm -f 10 -l 13 -png '" + f + "' " + week + name + "-story")
+	quit()
 
-originalfiles = {'1 Body.pdf': [12,13],'3 Medicine.pdf': [11,12],'5 Emergency.pdf':[11,12],'2 Ailments.pdf':[10,11],'4 Appointment.pdf':[11,12]}
+originalfiles = {'1 Modes of Transportation.pdf': [8,9], '3 Traffic Signs.pdf': [10,11],'5 Taking the Bus.pdf' : [11,12],'2 Places I Go.pdf' : [11,12], '4 Directions.pdf' : [11,12]}
+
 newfiles = []
 
 for f in originalfiles:
 	print(f, originalfiles[f])
-	#os.system("pdftk '" + f + "' cat " + str(originalfiles[f][0]) + "-" + str(originalfiles[f][1]) + " output '" + f.replace(".pdf","story.pdf'"))
+	os.system("pdftk '" + f + "' cat " + str(originalfiles[f][0]) + "-" + str(originalfiles[f][1]) + " output '" + f.replace(".pdf","story.pdf'"))
 	newfiles.append(f.replace(".pdf","story.pdf"))
 
 print(newfiles)
@@ -42,6 +44,7 @@ p5 = [0, 30, 600, 450]
 p6 = [640, 30, 1200, 450]
 p7 = [0, 550, 600, 900]
 p8 = [640, 530, 1200, 900]
+p9 = [0, 1060, 600, 1350]
 
 for sf in newfiles:
 	print(sf.replace(".pdf",""))
@@ -64,6 +67,8 @@ for sf in newfiles:
 	os.system("pdftoppm -f 2 -l 2 -png -x " + str(p7[0]) + " -y " + str(p7[1]) + " -W " + str(p7[2] - p7[0]) + " -H " + str(p7[3] - p7[1]) + " '" + sf + "' 'p7." + sf.replace(".pdf","'"))
 	#p8
 	os.system("pdftoppm -f 2 -l 2 -png -x " + str(p8[0]) + " -y " + str(p8[1]) + " -W " + str(p8[2] - p8[0]) + " -H " + str(p8[3] - p8[1]) + " '" + sf + "' 'p8." + sf.replace(".pdf","'"))
+	#p9
+	os.system("pdftoppm -f 2 -l 2 -png -x " + str(p9[0]) + " -y " + str(p9[1]) + " -W " + str(p9[2] - p9[0]) + " -H " + str(p9[3] - p9[1]) + " '" + sf + "' 'p9." + sf.replace(".pdf","'"))
 
 
 
