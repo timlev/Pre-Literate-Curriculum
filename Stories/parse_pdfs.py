@@ -12,15 +12,14 @@ print(args)
 #Convert all likely story pages (10-13) into pngs
 if not args.noconvert:
 	pdffiles = [x for x in os.listdir(".") if x.endswith(".pdf")]
-	print(pdffiles)
+	print(pdffiles.sort())
 	for f in pdffiles:
 		week, name = f.split(" ")[0], f.split(" ")[1].replace(".pdf","")
 		print(week)
 		print(name)
 		os.system("pdftoppm -f 10 -l 13 -png '" + f + "' " + week + name + "-story")
 	quit()
-
-originalfiles = {'1 Modes of Transportation.pdf': [8,9], '3 Traffic Signs.pdf': [10,11],'5 Taking the Bus.pdf' : [11,12],'2 Places I Go.pdf' : [11,12], '4 Directions.pdf' : [11,12]}
+originalfiles = {'1 Clothes.pdf' : [12,13], '2 Colors.pdf' : [13,14], '3 Sizes.pdf' : [10,11], '4 Weather.pdf' : [11,12], '5 Shopping.pdf': [10,11]}
 
 newfiles = []
 
