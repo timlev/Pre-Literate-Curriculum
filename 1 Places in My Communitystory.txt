@@ -1,0 +1,7 @@
+My Neighborhood
+My neighborhood has a library.
+My neighborhood has a clinic.
+My neighborhood has a hospital.
+My neighborhood has a store.
+My neighborhood doesn’t have a bank.
+My neighborhood doesn’t have a post office.

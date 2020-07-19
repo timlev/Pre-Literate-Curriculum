@@ -1,0 +1,7 @@
+Rice
+I turn the stove on.
+I turn the stove to medium.
+I turn the stove to high.
+Oh no!
+I turn the stove off.
+I eat rice.

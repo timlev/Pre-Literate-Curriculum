@@ -1,0 +1,7 @@
+Flu
+She has a headache.
+She has a runny nose.
+She has a cough.
+She has a sore throat.
+She has a fever.
+She has the flu.

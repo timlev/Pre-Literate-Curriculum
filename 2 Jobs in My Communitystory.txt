@@ -1,0 +1,9 @@
+He Goes to Work
+A driver works on the bus.
+A doctor works at the hospital.
+A janitor works at the school.
+A teacher works at the school.
+A mechanic works at the garage.
+A farmer works at the farm.
+An office worker works at the office.
+A cashier works at a store.

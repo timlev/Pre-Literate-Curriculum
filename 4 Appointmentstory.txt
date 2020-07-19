@@ -1,0 +1,9 @@
+Appointment
+I have an appointment.
+I write my date of birth.
+I write my phone number.
+I write my address.
+I write my social security number.
+I show my insurance card.
+I ask for an interpreter.
+I see the doctor.

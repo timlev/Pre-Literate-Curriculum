@@ -1,0 +1,10 @@
+In My Apartment
+"In my living room, I have a couch."
+"In my living room, I have a TV."
+"In my living room, I have a lamp."
+"In my dining room, I have a table and chairs."
+"In my bedroom, I have a bed."
+"In my bedroom, I have a dresser."
+"In my bedroom, I have a mirror."
+"In my kitchen, I have a clock."
+"In my kitchen, I have a rug."

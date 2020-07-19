@@ -1,0 +1,9 @@
+Weather
+It’s cold.
+I need boots.
+I need a hat.
+I need a scarf.
+I need mittens.
+I don’t need sandals.
+I don’t need shorts.
+I don’t need a swimming suit.
