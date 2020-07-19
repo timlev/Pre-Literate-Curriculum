@@ -1,0 +1,204 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./../drag_n_drop_theme.css" />
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet">
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
+<link href="../sliders.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script
+src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+<script src="../jquery.ui.touch-punch.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+<style>
+* {
+    font-family: 'Didact Gothic', sans-serif;
+    }
+#pictures_and_destinations {
+  border: 1px;
+  }
+
+#answers {
+  width: 90vw;
+}
+#answers {
+  text-align: center;
+  border-style: dotted;
+}
+
+.image {
+margin: auto;
+}
+
+.image > img {
+ margin: auto;
+ height:15vh;
+ border-style: solid;
+}
+.destination {
+  border-style: dashed;
+  text-align: center;
+  padding: 10px;
+  }
+
+</style>
+<script>
+function tapHandler(event){
+    var audioId = event.target.id + "_audio";
+    console.log(event.target.id);
+    //alert(audioId);
+    txtObj = document.getElementById(event.target.id);
+    audioObj = document.getElementById(audioId);
+    audioObj.addEventListener("ended", function(){
+      txtObj.style.backgroundColor = "transparent";
+    });
+    txtObj.style.backgroundColor = "yellow";
+    document.getElementById(audioId).play();
+}
+$(function() {
+  var score = 0;
+window.words_remaining = 0;
+  $(".source").on("dragstart", tapHandler );
+  $( ".source" ).draggable({ revert: "invalid", scroll: false});
+  $( ".destination" ).droppable({
+    drop: function( event, ui ) {
+      var dragged_category = ui.draggable.attr("name").split(",")[0];
+      var dropped_category = $(this).attr("name").split(",")[0];
+      if (ui.draggable.attr("name") == $(this).attr("name")){
+          ui.draggable.draggable("disable");
+          $(this).css({"background-color":"#70db70"});
+          $(this).html(ui.draggable.html());
+          ui.draggable.hide();
+  //$(this).toggleClass("source");
+          score += 1;
+  $(this).droppable({disabled: true});
+  console.log(window.words_remaining);
+          window.words_remaining -= 1;
+          moves += 1;
+          $("#status").text("Current score: " + score + " Words remaining: " + window.words_remaining);
+          if (window.words_remaining == 0){
+             document.getElementById("menu_link").innerHTML = "Finished!<br>Current score: " + score + " Words remaining: " + window.words_remaining + "<br>Moves: " + moves
+          }
+    }
+    else{
+        ui.draggable.css({"color":"red"});
+        moves += 1;
+
+    }
+
+    }
+  });
+  var slidetoggleinteraction = document.getElementById("toggleinteraction");
+  slidetoggleinteraction.addEventListener("click",function(){
+    if (slidetoggleinteraction.checked == false){
+      $( ".source" ).draggable("enable");
+    }
+    else {
+      $(".source").on("click", tapHandler );
+      $(".source").draggable("disable");
+    }
+  });
+});
+
+    var score = 0;
+    var moves = 0;
+</script>
+<title>
+Food
+</title>
+</head>
+
+<body>
+  <div id="header">
+    <label class="switch">
+     <input id="toggleinteraction" type="checkbox">
+     <span class="slider round"></span>
+   </label>
+   <span id="toggleinteractiontext">Lock</span>
+ </div>
+<table id="pictures_and_destinations">
+<tr>
+<tr>
+<td id="1a">
+<div class="image"><img src="imgs/911.png"/></div>
+<div class="destination" name="1,a" id="droppable"></div>
+</td>
+<td id="1b">
+<div class="image"><img src="imgs/ambulance.png"/></div>
+<div class="destination" name="1,b" id="droppable"></div>
+</td>
+<td id="1c">
+<div class="image"><img src="imgs/bleeding.png"/></div>
+<div class="destination" name="1,c" id="droppable"></div>
+</td>
+</tr>
+<tr>
+<td id="2a">
+<div class="image"><img src="imgs/broken.png"/></div>
+<div class="destination" name="2,a" id="droppable"></div>
+</td>
+<td id="2b">
+<div class="image"><img src="imgs/clinic.png"/></div>
+<div class="destination" name="2,b" id="droppable"></div>
+</td>
+<td id="2c">
+<div class="image"><img src="imgs/heart attack.png"/></div>
+<div class="destination" name="2,c" id="droppable"></div>
+</td>
+</tr>
+<tr>
+<td id="3a">
+<div class="image"><img src="imgs/hospital.png"/></div>
+<div class="destination" name="3,a" id="droppable"></div>
+</td>
+<td id="3b">
+<div class="image"><img src="imgs/passed out.png"/></div>
+<div class="destination" name="3,b" id="droppable"></div>
+</td>
+</tr>
+</td>
+</tr>
+</table>
+<table id="answers">
+<tr>
+<td id="1a">
+<div name="1,a" id="911" class="source">911</div>
+<audio name="1,a" id="911_audio" src="../sounds/911.mp3"></audio>
+</td>
+<td id="1b">
+<div name="1,b" id="ambulance" class="source">ambulance</div>
+<audio name="1,b" id="ambulance_audio" src="../sounds/ambulance.mp3"></audio>
+</td>
+<td id="1c">
+<div name="1,c" id="bleeding" class="source">bleeding</div>
+<audio name="1,c" id="bleeding_audio" src="../sounds/bleeding.mp3"></audio>
+</td>
+<td id="2a">
+<div name="2,a" id="broken" class="source">broken</div>
+<audio name="2,a" id="broken_audio" src="../sounds/broken.mp3"></audio>
+</td>
+<td id="2b">
+<div name="2,b" id="clinic" class="source">clinic</div>
+<audio name="2,b" id="clinic_audio" src="../sounds/clinic.mp3"></audio>
+</td>
+<td id="2c">
+<div name="2,c" id="heart attack" class="source">heart attack</div>
+<audio name="2,c" id="heart attack_audio" src="../sounds/heart attack.mp3"></audio>
+</td>
+<td id="3a">
+<div name="3,a" id="hospital" class="source">hospital</div>
+<audio name="3,a" id="hospital_audio" src="../sounds/hospital.mp3"></audio>
+</td>
+<td id="3b">
+<div name="3,b" id="passed out" class="source">passed out</div>
+<audio name="3,b" id="passed out_audio" src="../sounds/passed out.mp3"></audio>
+</td>
+</tr>
+</table>
+
+
+
+</body>
+</html>
