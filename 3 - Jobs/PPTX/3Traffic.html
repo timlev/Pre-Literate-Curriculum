@@ -1,24 +1,4 @@
-import csv
-
-
-def produce_blob(filename,wordlist):
-    index = 0
-    if len(wordlist) == 7:
-        columns = seven
-    elif len(wordlist) == 8:
-        columns = eight
-    elif len(wordlist) == 9:
-        columns = nine
-    elif len(wordlist) == 10:
-        columns = ten
-    elif len(wordlist) == 11:
-        columns = eleven
-    elif len(wordlist) == 12:
-        columns = twelve
-    else:
-        print("Wordlist is too large")
-        quit()
-    blob = """<html>
+<html>
     <head>
       <link rel="stylesheet" type="text/css" href="./../drag_n_drop_theme.css" />
     <link
@@ -125,10 +105,7 @@ def produce_blob(filename,wordlist):
         var score = 0;
         var moves = 0;
     </script>
-    <title>"""
-    blob += filename.replace(".html","")
-
-    blob += """
+    <title>3Traffic
     </title>
     </head>
 
@@ -141,68 +118,14 @@ def produce_blob(filename,wordlist):
        <span id="toggleinteractiontext">Lock</span>
      </div>
     <table id="pictures_and_destinations">
-    <tr>"""
-
-    for row in columns:
-        blob += '<tr>'
-        for col in row:
-            blob += '<td id="'+col+'">'
-            blob += '<div class="image"><img src="imgs/'+ wordlist[index] + '.png"/></div>'
-            blob += '<div class="destination" name="' + col[0] + ',' + col[1] + '" id="droppable"></div>'
-            blob += '</td>'
-            index += 1
-        blob += '</tr>'
-    blob += """</td>
+    <tr><tr><td id="1a"><div class="image"><img src="imgs/bus stop.png"/></div><div class="destination" name="1,a" id="droppable"></div></td><td id="1b"><div class="image"><img src="imgs/walk.png"/></div><div class="destination" name="1,b" id="droppable"></div></td><td id="1c"><div class="image"><img src="imgs/no smoking.png"/></div><div class="destination" name="1,c" id="droppable"></div></td></tr><tr><td id="2a"><div class="image"><img src="imgs/stop.png"/></div><div class="destination" name="2,a" id="droppable"></div></td><td id="2b"><div class="image"><img src="imgs/school crossing.png"/></div><div class="destination" name="2,b" id="droppable"></div></td><td id="2c"><div class="image"><img src="imgs/men’s restroom.png"/></div><div class="destination" name="2,c" id="droppable"></div></td></tr><tr><td id="3a"><div class="image"><img src="imgs/women’s restroom.png"/></div><div class="destination" name="3,a" id="droppable"></div></td><td id="3b"><div class="image"><img src="imgs/don’t walk.png"/></div><div class="destination" name="3,b" id="droppable"></div></td></tr></td>
     </tr>
     </table>
     <table id="answers">
-    <tr>"""
-
-    index = 0
-
-    for row in columns:
-        for col in row:
-            blob += '<td id="'+col+'">'
-            blob += '<div name="' + col[0] + ',' + col[1] + '" id="'+ wordlist[index] + '" class="source">'+ wordlist[index] + '</div>'
-            blob += '<audio name="'+ col[0] + ',' + col[1] + '" id="'+ wordlist[index] + '_audio" src="../sounds/'+ wordlist[index] + '.mp3"></audio>'
-            blob += '</td>'
-            index += 1
-
-
-    blob += """</tr>
+    <tr><td id="1a"><div name="1,a" id="bus stop" class="source">bus stop</div><audio name="1,a" id="bus stop_audio" src="../sounds/bus stop.mp3"></audio></td><td id="1b"><div name="1,b" id="walk" class="source">walk</div><audio name="1,b" id="walk_audio" src="../sounds/walk.mp3"></audio></td><td id="1c"><div name="1,c" id="no smoking" class="source">no smoking</div><audio name="1,c" id="no smoking_audio" src="../sounds/no smoking.mp3"></audio></td><td id="2a"><div name="2,a" id="stop" class="source">stop</div><audio name="2,a" id="stop_audio" src="../sounds/stop.mp3"></audio></td><td id="2b"><div name="2,b" id="school crossing" class="source">school crossing</div><audio name="2,b" id="school crossing_audio" src="../sounds/school crossing.mp3"></audio></td><td id="2c"><div name="2,c" id="men’s restroom" class="source">men’s restroom</div><audio name="2,c" id="men’s restroom_audio" src="../sounds/men’s restroom.mp3"></audio></td><td id="3a"><div name="3,a" id="women’s restroom" class="source">women’s restroom</div><audio name="3,a" id="women’s restroom_audio" src="../sounds/women’s restroom.mp3"></audio></td><td id="3b"><div name="3,b" id="don’t walk" class="source">don’t walk</div><audio name="3,b" id="don’t walk_audio" src="../sounds/don’t walk.mp3"></audio></td></tr>
     </table>
 
 
 
     </body>
-    </html>"""
-
-    #print(blob)
-    return filename, blob
-
-def writefile(blobtup):
-    with open(blobtup[0] + ".html", "w") as fp:
-        fp.write(blobtup[1])
-
-
-fourcol = [["1a","1b","1c","1d"],["2a","2b","2c","2d"],["3a","3b","3c","3d"]]
-threecol = [["1a","1b","1c"],["2a","2b","2c"],["3a","3b"]]
-seven = [["1a","1b","1c"],["2a","2b","2c"],["3a"]]
-eight = [["1a","1b","1c"],["2a","2b","2c"],["3a","3b"]]
-nine = [["1a","1b","1c"],["2a","2b","2c"],["3a","3b","3c"]]
-ten = [["1a","1b","1c","1d"],["2a","2b","2c","2d"],["3a"]]
-eleven = [["1a","1b","1c","1d"],["2a","2b","2c","2d"],["3a","3b","3c"]]
-twelve = [["1a","1b","1c","1d"],["2a","2b","2c","2d"],["3a","3b","3c","3d"]]
-
-with open("../../AllMatching.csv","r") as fp:
-    allmatching = fp.read().split("\n\n")
-
-#print(allmatching)
-
-for lesson in allmatching:
-    lesson = filter(None,lesson.split("\n"))
-    name = lesson.pop(0)
-    wordlist = lesson
-    #print(name)
-    #print([x.decode("utf-8").replace(u'\u2019', "'") for x in wordlist])
-    writefile(produce_blob(name, wordlist))
+    </html>
