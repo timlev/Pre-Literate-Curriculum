@@ -1,9 +1,0 @@
-Shopping
-She is shopping.
-The pants are medium.
-The pants are too small.
-The pants are extra large.
-The pants are too big.
-The pants are large.
-The pants fit!
-She buys the pants.

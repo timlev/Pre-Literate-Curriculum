@@ -1,9 +1,0 @@
-Clothes
-He wears underwear.
-He wears socks.
-He wears pants.
-He wears a shirt.
-He wears a sweater.
-He wears shoes.
-He wears a coat.
-He wears clothes.

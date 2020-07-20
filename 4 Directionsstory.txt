@@ -1,9 +1,0 @@
-I Go to the Library
-I go down stairs.
-I go out.
-I turn left.
-I go straight.
-I stop.
-I go across Dale St.
-I turn left.
-I go in.
