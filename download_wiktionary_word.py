@@ -134,12 +134,14 @@ if __name__ == "__main__":
     #print(download_gstatic("blowhole"))
     #print(download_gstatic("myword"))
     #wordlist = ["zero", "ten", "twenty", "one", "eleven", "twenty-one", "two", "twelve", "twenty-two", "three", "thirteen", "twenty-three", "four", "fourteen", "twenty-four", "five", "fifteen", "twenty-five", "six", "sixteen", "twenty-six", "seven", "seventeen", "twenty-seven", "eight", "eighteen", "twenty-eight", "nine", "nineteen", "twenty-nine", "thirty", "forty", "seventy", "thirty-one", "fifty", "eighty", "thirty-two", "sixty", "ninety"]
-    wordlist = ["musician"]
+    #wordlist = ["musician"]
+    wordlist = ['cashier', 'use a computer', 'take a class', 'too big', 'mail a letter', 'give medicine', 'baby', 'floor', 'pills', 'black', 'folder', 'phone number', 'father', 'notebook', 'hand', 'shower', 'orange', 'thin', 'socks', 'show me', 'ceiling', 'country', 'block', 'vomit', 'closed', 'high school', 'men’s restroom', 'newspaper', 'fan', 'factory worker', 'tub', 'bus stop', 'band aid', 'clinic', 'date of birth', 'motorcycle', 'signature', 'school crossing', 'women’s restroom', 'police station', 'state', 'marker', 'gray', 'sandals', 'shot', 'heavy', 'full time', 'laundromat', 'too long', 'arm', 'factory', 'dress', 'no music', 'get a book', 'ache', 'closet', 'clean the room', 'whiteboard', 'heart attack', 'get an x-ray', 'rash', 'sick', 'low', 'push', 'dining room', 'asprin', 'don’t walk', 'see a doctor', 'adults', 'too short', 'president', 'wash clothes', 'wall', 'brother', 'swimming suit', 'help wanted', 'umbrella', 'no food', 'count money', '911', 'office worker', 'social security number', 'chair', 'part time', 'fire truck', 'rug', 'buy food', 'sad', 'flag', 'ointment', 'mittens', 'middle school', 'no smoking', 'handicapped', 'up', 'fridge', 'school', 'dresser', 'passed out', 'cough syrup', 'elementary', 'extra large', 'interview', 'money order', 'grandpa', 'interpreter', 'handshake', 'drive the bus', 'fix cars', 'hall', 'post office', 'make a deposit', 'van', 'bra', 'bleeding', 'thief', 'husband', 'grow food', 'vote', 'pencil', 'insurance card', 'runny nose', 'grandma', 'preschool', 'TV', 'car', 'officer', 'teach a class', 'firefighter', 'capitol', 'sore throat']
     print(len(wordlist))
+    missing_words = []
     for word in wordlist:
         get_wiki(word)
-        """try:
+        try:
             convert_ogg_to_mp3(word + ".ogg", True)
         except:
             print("************\n Problem with " + word + "\n******************\n")
-"""
+            missing_words.append(word)
