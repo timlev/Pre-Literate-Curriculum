@@ -18,18 +18,17 @@ def produce_blob(filename,wordlist):
     else:
         print("Wordlist is too large")
         quit()
-    blob = """<html>
+    blob = """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
-      <link rel="stylesheet" type="text/css" href="./../drag_n_drop_theme.css" />
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet">
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
-    <link href="../sliders.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="../../drag_n_drop_theme.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
+    <link href="../../sliders.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script
-    src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
-    <script src="../jquery.ui.touch-punch.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script src="../../jquery.ui.touch-punch.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
     <style>
@@ -65,18 +64,52 @@ def produce_blob(filename,wordlist):
 
     </style>
     <script>
+    var i = 0;
+	var all_words = document.getElementsByClassName("source");
+
+	function finished_playing_list(event){
+		console.log(event.target.id + "Finished");
+		var txtObj = document.getElementById(event.target.id.replace("_audio",""));
+		txtObj.style.backgroundColor = 'transparent';
+		play_sound(play_sound);
+	}
+
+	function finished_playing(event){
+		console.log(event.target.id + "Finished");
+		var txtObj = document.getElementById(event.target.id.replace("_audio",""));
+		txtObj.style.backgroundColor = 'transparent';
+	}
+
+	function play_sound(play_sound){
+		if (i < all_words.length){
+			var word = all_words[i].id;
+			console.log(word);
+			var next_word = word + "_audio";
+			txtObj = document.getElementById(word);
+			audioObj = document.getElementById(next_word);
+			//audioObj.onended = finished_playing;
+			$(audioObj).on("ended", finished_playing_list);
+			txtObj.style.backgroundColor = "yellow";
+			document.getElementById(next_word).play();
+			i += 1;
+		}
+		else {
+			i = 0;
+			$(".source_audio").off();
+			$(".source_audio").on("ended",finished_playing);
+			//document.getElementById("playallbutton").remove();
+		}
+	}
+
     function tapHandler(event){
         var audioId = event.target.id + "_audio";
         console.log(event.target.id);
-        //alert(audioId);
         txtObj = document.getElementById(event.target.id);
         audioObj = document.getElementById(audioId);
-        audioObj.addEventListener("ended", function(){
-          txtObj.style.backgroundColor = "transparent";
-        });
         txtObj.style.backgroundColor = "yellow";
         document.getElementById(audioId).play();
-    }
+    };
+
     $(function() {
       var score = 0;
     window.words_remaining = 0;
@@ -139,6 +172,7 @@ def produce_blob(filename,wordlist):
          <span class="slider round"></span>
        </label>
        <span id="toggleinteractiontext">Lock</span>
+       <button id="playallbutton" onclick="play_sound(play_sound)">Play All Words</button>
      </div>
     <table id="pictures_and_destinations">
     <tr>"""
@@ -147,7 +181,7 @@ def produce_blob(filename,wordlist):
         blob += '<tr>'
         for col in row:
             blob += '<td id="'+col+'">'
-            blob += '<div class="image"><img src="imgs/'+ wordlist[index] + '.png"/></div>'
+            blob += '<div class="image"><img src="imgs/'+ wordlist[index] + '.jpg"/></div>'
             blob += '<div class="destination" name="' + col[0] + ',' + col[1] + '" id="droppable"></div>'
             blob += '</td>'
             index += 1
@@ -164,7 +198,7 @@ def produce_blob(filename,wordlist):
         for col in row:
             blob += '<td id="'+col+'">'
             blob += '<div name="' + col[0] + ',' + col[1] + '" id="'+ wordlist[index] + '" class="source">'+ wordlist[index] + '</div>'
-            blob += '<audio name="'+ col[0] + ',' + col[1] + '" id="'+ wordlist[index] + '_audio" src="../sounds/'+ wordlist[index] + '.mp3"></audio>'
+            blob += '<audio name="'+ col[0] + ',' + col[1] + '" id="'+ wordlist[index] + '_audio" class="source_audio" src="../../units/sounds/'+ wordlist[index] + '.mp3"></audio>'
             blob += '</td>'
             index += 1
 
@@ -194,13 +228,13 @@ ten = [["1a","1b","1c","1d"],["2a","2b","2c","2d"],["3a"]]
 eleven = [["1a","1b","1c","1d"],["2a","2b","2c","2d"],["3a","3b","3c"]]
 twelve = [["1a","1b","1c","1d"],["2a","2b","2c","2d"],["3a","3b","3c","3d"]]
 
-with open("../../AllMatching.csv","r") as fp:
+with open("AllMatching.csv","r") as fp:
     allmatching = fp.read().split("\n\n")
 
 #print(allmatching)
 
 for lesson in allmatching:
-    lesson = filter(None,lesson.split("\n"))
+    lesson = list(filter(None,lesson.split("\n")))
     name = lesson.pop(0)
     wordlist = lesson
     #print(name)

@@ -1,14 +1,13 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
       <link rel="stylesheet" type="text/css" href="../../drag_n_drop_theme.css" />
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet">
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
-    <link href="../../sliders.cs" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
+    <link href="../../sliders.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script
-    src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
     <script src="../../jquery.ui.touch-punch.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
@@ -45,18 +44,52 @@
 
     </style>
     <script>
+    var i = 0;
+	var all_words = document.getElementsByClassName("source");
+
+	function finished_playing_list(event){
+		console.log(event.target.id + "Finished");
+		var txtObj = document.getElementById(event.target.id.replace("_audio",""));
+		txtObj.style.backgroundColor = 'transparent';
+		play_sound(play_sound);
+	}
+
+	function finished_playing(event){
+		console.log(event.target.id + "Finished");
+		var txtObj = document.getElementById(event.target.id.replace("_audio",""));
+		txtObj.style.backgroundColor = 'transparent';
+	}
+
+	function play_sound(play_sound){
+		if (i < all_words.length){
+			var word = all_words[i].id;
+			console.log(word);
+			var next_word = word + "_audio";
+			txtObj = document.getElementById(word);
+			audioObj = document.getElementById(next_word);
+			//audioObj.onended = finished_playing;
+			$(audioObj).on("ended", finished_playing_list);
+			txtObj.style.backgroundColor = "yellow";
+			document.getElementById(next_word).play();
+			i += 1;
+		}
+		else {
+			i = 0;
+			$(".source_audio").off();
+			$(".source_audio").on("ended",finished_playing);
+			//document.getElementById("playallbutton").remove();
+		}
+	}
+
     function tapHandler(event){
         var audioId = event.target.id + "_audio";
         console.log(event.target.id);
-        //alert(audioId);
         txtObj = document.getElementById(event.target.id);
         audioObj = document.getElementById(audioId);
-        audioObj.addEventListener("ended", function(){
-          txtObj.style.backgroundColor = "transparent";
-        });
         txtObj.style.backgroundColor = "yellow";
         document.getElementById(audioId).play();
-    }
+    };
+
     $(function() {
       var score = 0;
     window.words_remaining = 0;
@@ -116,13 +149,14 @@
          <span class="slider round"></span>
        </label>
        <span id="toggleinteractiontext">Lock</span>
+       <button id="playallbutton" onclick="play_sound(play_sound)">Play All Words</button>
      </div>
     <table id="pictures_and_destinations">
     <tr><tr><td id="1a"><div class="image"><img src="imgs/office worker.jpg"/></div><div class="destination" name="1,a" id="droppable"></div></td><td id="1b"><div class="image"><img src="imgs/driver.jpg"/></div><div class="destination" name="1,b" id="droppable"></div></td><td id="1c"><div class="image"><img src="imgs/cashier.jpg"/></div><div class="destination" name="1,c" id="droppable"></div></td><td id="1d"><div class="image"><img src="imgs/factory worker.jpg"/></div><div class="destination" name="1,d" id="droppable"></div></td></tr><tr><td id="2a"><div class="image"><img src="imgs/doctor.jpg"/></div><div class="destination" name="2,a" id="droppable"></div></td><td id="2b"><div class="image"><img src="imgs/mechanic.jpg"/></div><div class="destination" name="2,b" id="droppable"></div></td><td id="2c"><div class="image"><img src="imgs/farmer.jpg"/></div><div class="destination" name="2,c" id="droppable"></div></td><td id="2d"><div class="image"><img src="imgs/manager.jpg"/></div><div class="destination" name="2,d" id="droppable"></div></td></tr><tr><td id="3a"><div class="image"><img src="imgs/teacher.jpg"/></div><div class="destination" name="3,a" id="droppable"></div></td></tr></td>
     </tr>
     </table>
     <table id="answers">
-    <tr><td id="1a"><div name="1,a" id="office worker" class="source">office worker</div><audio name="1,a" id="office worker_audio" src="../../units/sounds/office worker.mp3"></audio></td><td id="1b"><div name="1,b" id="driver" class="source">driver</div><audio name="1,b" id="driver_audio" src="../../units/sounds/driver.mp3"></audio></td><td id="1c"><div name="1,c" id="cashier" class="source">cashier</div><audio name="1,c" id="cashier_audio" src="../../units/sounds/cashier.mp3"></audio></td><td id="1d"><div name="1,d" id="factory worker" class="source">factory worker</div><audio name="1,d" id="factory worker_audio" src="../../units/sounds/factory worker.mp3"></audio></td><td id="2a"><div name="2,a" id="doctor" class="source">doctor</div><audio name="2,a" id="doctor_audio" src="../../units/sounds/doctor.mp3"></audio></td><td id="2b"><div name="2,b" id="mechanic" class="source">mechanic</div><audio name="2,b" id="mechanic_audio" src="../../units/sounds/mechanic.mp3"></audio></td><td id="2c"><div name="2,c" id="farmer" class="source">farmer</div><audio name="2,c" id="farmer_audio" src="../../units/sounds/farmer.mp3"></audio></td><td id="2d"><div name="2,d" id="manager" class="source">manager</div><audio name="2,d" id="manager_audio" src="../../units/sounds/manager.mp3"></audio></td><td id="3a"><div name="3,a" id="teacher" class="source">teacher</div><audio name="3,a" id="teacher_audio" src="../../units/sounds/teacher.mp3"></audio></td></tr>
+    <tr><td id="1a"><div name="1,a" id="office worker" class="source">office worker</div><audio name="1,a" id="office worker_audio" class="source_audio" src="../../units/sounds/office worker.mp3"></audio></td><td id="1b"><div name="1,b" id="driver" class="source">driver</div><audio name="1,b" id="driver_audio" class="source_audio" src="../../units/sounds/driver.mp3"></audio></td><td id="1c"><div name="1,c" id="cashier" class="source">cashier</div><audio name="1,c" id="cashier_audio" class="source_audio" src="../../units/sounds/cashier.mp3"></audio></td><td id="1d"><div name="1,d" id="factory worker" class="source">factory worker</div><audio name="1,d" id="factory worker_audio" class="source_audio" src="../../units/sounds/factory worker.mp3"></audio></td><td id="2a"><div name="2,a" id="doctor" class="source">doctor</div><audio name="2,a" id="doctor_audio" class="source_audio" src="../../units/sounds/doctor.mp3"></audio></td><td id="2b"><div name="2,b" id="mechanic" class="source">mechanic</div><audio name="2,b" id="mechanic_audio" class="source_audio" src="../../units/sounds/mechanic.mp3"></audio></td><td id="2c"><div name="2,c" id="farmer" class="source">farmer</div><audio name="2,c" id="farmer_audio" class="source_audio" src="../../units/sounds/farmer.mp3"></audio></td><td id="2d"><div name="2,d" id="manager" class="source">manager</div><audio name="2,d" id="manager_audio" class="source_audio" src="../../units/sounds/manager.mp3"></audio></td><td id="3a"><div name="3,a" id="teacher" class="source">teacher</div><audio name="3,a" id="teacher_audio" class="source_audio" src="../../units/sounds/teacher.mp3"></audio></td></tr>
     </table>
 
 

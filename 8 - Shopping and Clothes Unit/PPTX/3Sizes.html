@@ -1,14 +1,13 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
       <link rel="stylesheet" type="text/css" href="../../drag_n_drop_theme.css" />
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet">
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
-    <link href="../../sliders.cs" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
+    <link href="../../sliders.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script
-    src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
     <script src="../../jquery.ui.touch-punch.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
@@ -45,18 +44,52 @@
 
     </style>
     <script>
+    var i = 0;
+	var all_words = document.getElementsByClassName("source");
+
+	function finished_playing_list(event){
+		console.log(event.target.id + "Finished");
+		var txtObj = document.getElementById(event.target.id.replace("_audio",""));
+		txtObj.style.backgroundColor = 'transparent';
+		play_sound(play_sound);
+	}
+
+	function finished_playing(event){
+		console.log(event.target.id + "Finished");
+		var txtObj = document.getElementById(event.target.id.replace("_audio",""));
+		txtObj.style.backgroundColor = 'transparent';
+	}
+
+	function play_sound(play_sound){
+		if (i < all_words.length){
+			var word = all_words[i].id;
+			console.log(word);
+			var next_word = word + "_audio";
+			txtObj = document.getElementById(word);
+			audioObj = document.getElementById(next_word);
+			//audioObj.onended = finished_playing;
+			$(audioObj).on("ended", finished_playing_list);
+			txtObj.style.backgroundColor = "yellow";
+			document.getElementById(next_word).play();
+			i += 1;
+		}
+		else {
+			i = 0;
+			$(".source_audio").off();
+			$(".source_audio").on("ended",finished_playing);
+			//document.getElementById("playallbutton").remove();
+		}
+	}
+
     function tapHandler(event){
         var audioId = event.target.id + "_audio";
         console.log(event.target.id);
-        //alert(audioId);
         txtObj = document.getElementById(event.target.id);
         audioObj = document.getElementById(audioId);
-        audioObj.addEventListener("ended", function(){
-          txtObj.style.backgroundColor = "transparent";
-        });
         txtObj.style.backgroundColor = "yellow";
         document.getElementById(audioId).play();
-    }
+    };
+
     $(function() {
       var score = 0;
     window.words_remaining = 0;
@@ -116,13 +149,14 @@
          <span class="slider round"></span>
        </label>
        <span id="toggleinteractiontext">Lock</span>
+       <button id="playallbutton" onclick="play_sound(play_sound)">Play All Words</button>
      </div>
     <table id="pictures_and_destinations">
     <tr><tr><td id="1a"><div class="image"><img src="imgs/shopping.jpg"/></div><div class="destination" name="1,a" id="droppable"></div></td><td id="1b"><div class="image"><img src="imgs/small.jpg"/></div><div class="destination" name="1,b" id="droppable"></div></td><td id="1c"><div class="image"><img src="imgs/too long.jpg"/></div><div class="destination" name="1,c" id="droppable"></div></td></tr><tr><td id="2a"><div class="image"><img src="imgs/medium.jpg"/></div><div class="destination" name="2,a" id="droppable"></div></td><td id="2b"><div class="image"><img src="imgs/too short.jpg"/></div><div class="destination" name="2,b" id="droppable"></div></td><td id="2c"><div class="image"><img src="imgs/extra large.jpg"/></div><div class="destination" name="2,c" id="droppable"></div></td></tr><tr><td id="3a"><div class="image"><img src="imgs/too big.jpg"/></div><div class="destination" name="3,a" id="droppable"></div></td><td id="3b"><div class="image"><img src="imgs/large.jpg"/></div><div class="destination" name="3,b" id="droppable"></div></td></tr></td>
     </tr>
     </table>
     <table id="answers">
-    <tr><td id="1a"><div name="1,a" id="shopping" class="source">shopping</div><audio name="1,a" id="shopping_audio" src="../../units/sounds/shopping.mp3"></audio></td><td id="1b"><div name="1,b" id="small" class="source">small</div><audio name="1,b" id="small_audio" src="../../units/sounds/small.mp3"></audio></td><td id="1c"><div name="1,c" id="too long" class="source">too long</div><audio name="1,c" id="too long_audio" src="../../units/sounds/too long.mp3"></audio></td><td id="2a"><div name="2,a" id="medium" class="source">medium</div><audio name="2,a" id="medium_audio" src="../../units/sounds/medium.mp3"></audio></td><td id="2b"><div name="2,b" id="too short" class="source">too short</div><audio name="2,b" id="too short_audio" src="../../units/sounds/too short.mp3"></audio></td><td id="2c"><div name="2,c" id="extra large" class="source">extra large</div><audio name="2,c" id="extra large_audio" src="../../units/sounds/extra large.mp3"></audio></td><td id="3a"><div name="3,a" id="too big" class="source">too big</div><audio name="3,a" id="too big_audio" src="../../units/sounds/too big.mp3"></audio></td><td id="3b"><div name="3,b" id="large" class="source">large</div><audio name="3,b" id="large_audio" src="../../units/sounds/large.mp3"></audio></td></tr>
+    <tr><td id="1a"><div name="1,a" id="shopping" class="source">shopping</div><audio name="1,a" id="shopping_audio" class="source_audio" src="../../units/sounds/shopping.mp3"></audio></td><td id="1b"><div name="1,b" id="small" class="source">small</div><audio name="1,b" id="small_audio" class="source_audio" src="../../units/sounds/small.mp3"></audio></td><td id="1c"><div name="1,c" id="too long" class="source">too long</div><audio name="1,c" id="too long_audio" class="source_audio" src="../../units/sounds/too long.mp3"></audio></td><td id="2a"><div name="2,a" id="medium" class="source">medium</div><audio name="2,a" id="medium_audio" class="source_audio" src="../../units/sounds/medium.mp3"></audio></td><td id="2b"><div name="2,b" id="too short" class="source">too short</div><audio name="2,b" id="too short_audio" class="source_audio" src="../../units/sounds/too short.mp3"></audio></td><td id="2c"><div name="2,c" id="extra large" class="source">extra large</div><audio name="2,c" id="extra large_audio" class="source_audio" src="../../units/sounds/extra large.mp3"></audio></td><td id="3a"><div name="3,a" id="too big" class="source">too big</div><audio name="3,a" id="too big_audio" class="source_audio" src="../../units/sounds/too big.mp3"></audio></td><td id="3b"><div name="3,b" id="large" class="source">large</div><audio name="3,b" id="large_audio" class="source_audio" src="../../units/sounds/large.mp3"></audio></td></tr>
     </table>
 
 
