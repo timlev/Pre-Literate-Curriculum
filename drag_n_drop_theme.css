@@ -12,6 +12,24 @@
   border-style:outset;
 }
 
+#pictures_and_destinations td img {
+ height:75%;
+ max-height:20vh;
+ width:auto;
+ max-width: 33vw;
+ margin-left: auto;
+ margin-right: auto;
+ display:grid;
+ align-content: center;
+}
+.destination {
+  border-style: dashed;
+  text-align: center;
+  padding: 1px;
+  height:22%;
+  font-family: 'Sen', sans-serif;
+  min-height: 45px;
+  }
 #header {
     background-color: #abcdef;
     border: solid black 3pt;
@@ -46,7 +64,7 @@
 #title {
   text-align: center;
   display:inline-block;
-  min-width: 50vw;
+  min-width: 40vw;
 
 }
 #sourcetable {
@@ -54,11 +72,6 @@
     flex-wrap: wrap;
 }
 
-.emphasized {
-    display: inline;
-    font-weight: bold;
-    text-decoration: underline;
-}
 
 * {
 	cursor : pointer;
@@ -111,21 +124,3 @@
 .wrong_answer {
 color:red;
 }
-img {
- height:75%;
- max-height:20vh;
- width:auto;
- max-width: 30vw;
- margin-left: auto;
- margin-right: auto;
- display:grid;
- align-content: center;
-}
-.destination {
-  border-style: dashed;
-  text-align: center;
-  padding: 1px;
-  height:20%;
-  font-family: 'Sen', sans-serif;
-  font-size: 32px;
-  }
