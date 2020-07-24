@@ -21,7 +21,7 @@ var all_words = document.getElementsByClassName("source");
 function finished_playing_list(event){
 	console.log(event.target.id + "Finished");
 	var txtObj = document.getElementById(event.target.id.replace("_audio",""));
-	txtObj.style.backgroundColor = 'transparent';
+        $(txtObj).toggleClass("playing");
 	play_sound(play_sound);
 }
 
@@ -29,7 +29,7 @@ function finished_playing(event){
 	console.log(event.target.id + "Finished");
         var txtid = event.target.id.replace("_audio","");
 	var txtObj = document.getElementById(txtid);
-	txtObj.style.backgroundColor = 'transparent';
+	$(txtObj).toggleClass("playing");
 }
 
 function play_sound(play_sound){
@@ -41,7 +41,7 @@ function play_sound(play_sound){
 		audioObj = document.getElementById(next_word);
 		//audioObj.onended = finished_playing;
 		$(audioObj).on("ended", finished_playing_list);
-		txtObj.style.backgroundColor = "yellow";
+		$(txtObj).toggleClass("playing");
 		document.getElementById(next_word).play();
 		i += 1;
 	}
@@ -65,7 +65,7 @@ function tapHandler(event){
     console.log(txtObj);
     audioObj = document.getElementById(audioId);
     audioObj.addEventListener("ended",finished_playing);
-    txtObj.style.backgroundColor = "yellow";
+    $(txtObj).toggleClass("playing")
     audioObj.play();
 };
 
