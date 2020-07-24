@@ -22,7 +22,7 @@ function finished_playing_list(event){
 	console.log(event.target.id + "Finished");
 	var txtObj = document.getElementById(event.target.id.replace("_audio",""));
         $(txtObj).toggleClass("playing");
-	play_sound(play_sound);
+	play_all_sounds(play_allsound_sounds);
 }
 
 function finished_playing(event){
@@ -32,7 +32,18 @@ function finished_playing(event){
 	$(txtObj).toggleClass("playing");
 }
 
-function play_sound(play_sound){
+function play_sound(event){
+    console.log(event.target.id);
+    var audioId = event.target.id.replace("_sound_button","_audio");
+    var audioObj = document.getElementById(audioId);
+    var txtid = event.target.id.replace("_sound_button","")
+    var txtObj = document.getElementById(txtid);
+    $(txtObj).toggleClass("playing");
+    $(audioObj).on("ended", finished_playing);
+    audioObj.play();
+}
+
+function play_all_sounds(play_sound){
 	if (i < all_words.length){
 		var word = all_words[i].id;
 		console.log(word);
@@ -75,7 +86,7 @@ window.words_remaining = 0;
 console.log(window.orientation);
   $("#back_button").on("click",function(){window.location = "../matchingindex.html";});
   $(".source").on("dragstart", tapHandler );
-  $(".sound_button").on("click",tapHandler);
+  $(".sound_button").on("click",play_sound);
   $( ".source" ).draggable({ revert: "invalid", scroll: false});
   $( ".destination" ).droppable({
     drop: function( event, ui ) {
