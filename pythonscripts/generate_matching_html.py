@@ -73,7 +73,7 @@ $(function() {
   var score = 0;
 window.words_remaining = 0;
 console.log(window.orientation);
-
+  $("#back_button").on("click",function(){window.location = "../matchingindex.html";});
   $(".source").on("dragstart", tapHandler );
   $(".sound_button").on("click",tapHandler);
   $( ".source" ).draggable({ revert: "invalid", scroll: false});
