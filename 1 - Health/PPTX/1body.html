@@ -61,6 +61,8 @@ function tapHandler(event){
 $(function() {
   var score = 0;
 window.words_remaining = 0;
+console.log(window.orientation);
+
   $(".source").on("dragstart", tapHandler );
   $( ".source" ).draggable({ revert: "invalid", scroll: false});
   $( ".destination" ).droppable({
@@ -69,7 +71,9 @@ window.words_remaining = 0;
       var dropped_category = $(this).attr("name").split(",")[0];
       if (ui.draggable.attr("name") == $(this).attr("name")){
           ui.draggable.draggable("disable");
-          $(this).css({"background-color":"#70db70"});
+          // $(this).css({"background-color":"#70db70"});
+					$(this).removeClass("wrong_answer");
+					$(this).addClass("correct_answer");
           $(this).html(ui.draggable.html());
           ui.draggable.hide();
   //$(this).toggleClass("source");
@@ -84,21 +88,12 @@ window.words_remaining = 0;
           }
     }
     else{
-        ui.draggable.css({"color":"red"});
+        //ui.draggable.css({"color":"red"});
+				ui.draggable.addClass("wrong_answer");
         moves += 1;
 
     }
 
-    }
-  });
-  var slidetoggleinteraction = document.getElementById("toggleinteraction");
-  slidetoggleinteraction.addEventListener("click",function(){
-    if (slidetoggleinteraction.checked == false){
-      $( ".source" ).draggable("enable");
-    }
-    else {
-      $(".source").on("click", tapHandler );
-      $(".source").draggable("disable");
     }
   });
 });
@@ -114,52 +109,70 @@ window.words_remaining = 0;
 <body>
 <table id="pictures_and_destinations">
 <tr>
-<tr>
 <td id="1a">
-<div class="image"><img src="imgs/chest.jpg"/></div>
+<img src="imgs/chest.jpg"/>
 <div class="destination" name="1,a" id="droppable"></div>
 </td>
 <td id="1b">
-<div class="image"><img src="imgs/legs.jpg"/></div>
+<img src="imgs/legs.jpg"/>
 <div class="destination" name="1,b" id="droppable"></div>
 </td>
 <td id="1c">
-<div class="image"><img src="imgs/stomach.jpg"/></div>
+<img src="imgs/stomach.jpg"/>
 <div class="destination" name="1,c" id="droppable"></div>
 </td>
 </tr>
 <tr>
 <td id="2a">
-<div class="image"><img src="imgs/hand.jpg"/></div>
+<img src="imgs/hand.jpg"/>
 <div class="destination" name="2,a" id="droppable"></div>
 </td>
 <td id="2b">
-<div class="image"><img src="imgs/back.jpg"/></div>
+<img src="imgs/back.jpg"/>
 <div class="destination" name="2,b" id="droppable"></div>
 </td>
 <td id="2c">
-<div class="image"><img src="imgs/head.jpg"/></div>
+<img src="imgs/head.jpg"/>
 <div class="destination" name="2,c" id="droppable"></div>
 </td>
 </tr>
 <tr>
 <td id="3a">
-<div class="image"><img src="imgs/feet.jpg"/></div>
+<img src="imgs/feet.jpg"/>
 <div class="destination" name="3,a" id="droppable"></div>
 </td>
 <td id="3b">
-<div class="image"><img src="imgs/arm.jpg"/></div>
+<img src="imgs/arm.jpg"/>
 <div class="destination" name="3,b" id="droppable"></div>
 </td>
 <td id="3c">
-<div class="image"><img src="imgs/neck.jpg"/></div>
+<img src="imgs/neck.jpg"/>
 <div class="destination" name="3,c" id="droppable"></div>
 </td>
 </tr>
-</td>
-</tr>
 </table>
-<div>Answers</div>
+<div id="answers_div"><table id="answers">
+<div name="1,a" id="chest" class="source">chest</div>
+<audio name="1,a" id="chest_audio" class="source_audio" src="../../units/sounds/chest.mp3"></audio>
+<div name="1,b" id="legs" class="source">legs</div>
+<audio name="1,b" id="legs_audio" class="source_audio" src="../../units/sounds/legs.mp3"></audio>
+<div name="1,c" id="stomach" class="source">stomach</div>
+<audio name="1,c" id="stomach_audio" class="source_audio" src="../../units/sounds/stomach.mp3"></audio>
+<div name="2,a" id="hand" class="source">hand</div>
+<audio name="2,a" id="hand_audio" class="source_audio" src="../../units/sounds/hand.mp3"></audio>
+<div name="2,b" id="back" class="source">back</div>
+<audio name="2,b" id="back_audio" class="source_audio" src="../../units/sounds/back.mp3"></audio>
+<div name="2,c" id="head" class="source">head</div>
+<audio name="2,c" id="head_audio" class="source_audio" src="../../units/sounds/head.mp3"></audio>
+<div name="3,a" id="feet" class="source">feet</div>
+<audio name="3,a" id="feet_audio" class="source_audio" src="../../units/sounds/feet.mp3"></audio>
+<div name="3,b" id="arm" class="source">arm</div>
+<audio name="3,b" id="arm_audio" class="source_audio" src="../../units/sounds/arm.mp3"></audio>
+<div name="3,c" id="neck" class="source">neck</div>
+<audio name="3,c" id="neck_audio" class="source_audio" class="source_audio" src="../../units/sounds/neck.mp3"></audio>
+
+
+<!--
 <table id="answers">
 <tr>
 <tr><td id="1a">
@@ -200,7 +213,7 @@ window.words_remaining = 0;
 </td></tr>
 </tr>
 </table>
-
+ -->
 
 
 </body>

@@ -1,13 +1,15 @@
-window {
-  width: 100%;
-  max-width: 100%;
-}
 
-table
+#pictures_and_destinations
 {
-    height: 80vh;
-    border-spacing: 3px;
-      align-content: center;
+    width: 99vw;
+    height: 90vh;
+}
+#pictures_and_destinations td{
+  height:30%;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  border-style:outset;
 }
 
 th {
@@ -22,7 +24,6 @@ th {
     text-align: center;
     font-family:'Didact Gothic', sans-serif;
     text-shadow: 0px 1px 1px #fff;
-    //background-image: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#999));
 }
 
 #sourcetable {
@@ -50,26 +51,41 @@ th {
 #pictures_and_destinations {
   border: 1px;
   }
-
-#answers {
+#answers_div {
+  display:flex;
+  flex-wrap: wrap;
+}
+#answers_div div{
   text-align: center;
   border-style: dotted;
-  overflow :auto;
+  overflow : wrap;
   font-family: 'Sen', sans-serif;
-  font-size: 32px;
+  font-size: 45px;
+  min-height: 45px;
 }
 
-.image {
-margin: auto;
+.correct_answer {
+  background-color: #70db70;
 }
 
-.image > img {
- margin: auto;
- height:25vh;
- border-style: solid;
+.wrong_answer {
+color:red;
+}
+img {
+ height:75%;
+ max-height:20vh;
+ width:auto;
+ max-width: 30vw;
+ margin-left: auto;
+ margin-right: auto;
+ display:grid;
+ align-content: center;
 }
 .destination {
   border-style: dashed;
   text-align: center;
-  padding: 8px;
+  padding: 1px;
+  height:20%;
+  font-family: 'Sen', sans-serif;
+  font-size: 32px;
   }
