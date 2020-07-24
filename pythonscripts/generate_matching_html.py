@@ -8,12 +8,12 @@ header_starter = """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 		<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
 		 <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" href="../../drag_n_drop_theme.css" />
+  <link rel="stylesheet" type="text/css" href="../drag_n_drop_theme.css" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
-<script src="../../jquery.ui.touch-punch.min.js"></script>
+<script src="../jquery.ui.touch-punch.min.js"></script>
 <script>
 var i = 0;
 var all_words = document.getElementsByClassName("source");
@@ -163,11 +163,11 @@ def create_header(filename):
     header = soup.new_tag("div",id="header")
     back_button = soup.new_tag("div", id="back_button")
     back_button.string = "Back"
-    img = soup.new_tag("img", src="../../images/back_button.png")
+    img = soup.new_tag("img", src="../images/back_button.png")
     back_button.append(img)
     header.append(back_button)
     header_title = soup.new_tag("div", id="title")
-    header_title.string = filename
+    header_title.string = os.path.basename(filename)
     header.append(header_title)
     return header
 
@@ -193,13 +193,13 @@ def create_answer(col, index):
     text_div = soup.new_tag("div")
     text_div.string = wordlist[index]
     answer_div.append(text_div)
-    sound_button_image = soup.new_tag("img", src="../../images/sound_button.png", id=str(wordlist[index]) + "_sound_button")
+    sound_button_image = soup.new_tag("img", src="../images/sound_button.png", id=str(wordlist[index]) + "_sound_button")
     answer_div.append(sound_button_image)
     #soup.body.append(answer_div)
     return answer_div
 
 def create_audio(col,index):
-    base_src = "../../units/sounds/"
+    base_src = "../units/sounds/"
     audio_div = soup.new_tag("audio", id=wordlist[index] + "_audio", src=base_src + wordlist[index] +".mp3")
     audio_div["name"] = str(col[0]) + """,""" + str(col[1])
     audio_div["class"] = "source_audio"
