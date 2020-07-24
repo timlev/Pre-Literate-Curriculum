@@ -27,7 +27,8 @@ function finished_playing_list(event){
 
 function finished_playing(event){
 	console.log(event.target.id + "Finished");
-	var txtObj = document.getElementById(event.target.id.replace("_audio",""));
+        var txtid = event.target.id.replace("_audio","");
+	var txtObj = document.getElementById(txtid);
 	txtObj.style.backgroundColor = 'transparent';
 }
 
@@ -53,12 +54,19 @@ function play_sound(play_sound){
 }
 
 function tapHandler(event){
-    var audioId = event.target.id + "_audio";
-    console.log(event.target.id);
-    txtObj = document.getElementById(event.target.id);
+    var audioId = event.target.id;
+    if (audioId.includes("_sound_button")){
+        audioId = audioId.replace("_sound_button","_audio");
+    }
+    else {
+        audioId = audioId + "_audio";
+    }
+    txtObj = document.getElementById(audioId.replace("_audio",""));
+    console.log(txtObj);
     audioObj = document.getElementById(audioId);
+    audioObj.addEventListener("ended",finished_playing);
     txtObj.style.backgroundColor = "yellow";
-    document.getElementById(audioId).play();
+    audioObj.play();
 };
 
 $(function() {
@@ -67,6 +75,7 @@ window.words_remaining = 0;
 console.log(window.orientation);
 
   $(".source").on("dragstart", tapHandler );
+  $(".sound_button").on("click",tapHandler);
   $( ".source" ).draggable({ revert: "invalid", scroll: false});
   $( ".destination" ).droppable({
     drop: function( event, ui ) {
@@ -194,6 +203,7 @@ def create_answer(col, index):
     text_div.string = wordlist[index]
     answer_div.append(text_div)
     sound_button_image = soup.new_tag("img", src="../images/sound_button.png", id=str(wordlist[index]) + "_sound_button")
+    sound_button_image["class"] = "sound_button"
     answer_div.append(sound_button_image)
     #soup.body.append(answer_div)
     return answer_div
