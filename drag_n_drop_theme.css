@@ -89,6 +89,14 @@ th {
   font-family: 'Sen', sans-serif;
   font-size: 45px;
   min-height: 45px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: inline-block;
+
+}
+#answers_div div img {
+  display: inline-block;
+  align-self: right;
 }
 
 .correct_answer {
