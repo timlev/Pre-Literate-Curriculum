@@ -1,4 +1,5 @@
-1Clothes
+8 - Shopping and Clothes Unit
+1 Clothes
 shoes
 shirt
 underwear
@@ -9,7 +10,8 @@ pants
 coat
 dress
 
-1Family
+7 - Family and School
+1 Family
 mother
 sister
 grandpa
@@ -21,7 +23,8 @@ brother
 father
 son
 
-1Modes
+4 - Transportation
+1 Modes
 truck
 car
 motorcycle
@@ -33,7 +36,8 @@ bus
 walk
 bicycle
 
-1Places
+5 - Community and Civics
+1 Places
 neighborhood
 school
 store
@@ -45,7 +49,8 @@ library
 hospital
 post office
 
-1Rooms
+2 - Housing
+1 Rooms
 bathroom
 kitchen
 living room
@@ -57,7 +62,8 @@ hall
 floor
 wall
 
-1Work
+3 - Jobs
+1 Work
 farm
 bus
 hospital
@@ -67,7 +73,8 @@ garage
 factory
 school
 
-2Colors
+8 - Shopping and Clothes Unit
+2 Colors
 yellow
 purple
 brown
@@ -78,7 +85,8 @@ red
 green
 black
 
-2Describing
+7 - Family and School
+2 Describing
 short
 young
 thin
@@ -89,7 +97,8 @@ tall
 sick
 heavy
 
-2Furniture
+2 - Housing
+2 Furniture
 chair
 couch
 table
@@ -101,7 +110,8 @@ TV
 rug
 clock
 
-2Jobs
+3 - Jobs
+2 Jobs
 office worker
 driver
 cashier
@@ -113,7 +123,8 @@ manager
 teacher
 janitor
 
-2Places
+4 - Transportation
+2 Places
 bank
 police station
 library
@@ -123,7 +134,8 @@ school
 post office
 home
 
-2Things
+5 - Community and Civics
+2 Things
 wash clothes
 get an x-ray
 get a book
@@ -133,7 +145,8 @@ mail a letter
 buy food
 see a doctor
 
-3Jobs
+3 - Jobs
+3 Jobs
 teach a class
 use a computer
 give medicine
@@ -143,7 +156,8 @@ fix cars
 grow food
 count money
 
-3School
+7 - Family and School
+3 School
 baby
 high school
 college
@@ -153,7 +167,8 @@ preschool
 elementary
 middle school
 
-3Settings
+2 - Housing
+3 Settings
 low
 on
 stove
@@ -165,7 +180,8 @@ medium
 microwave
 AC
 
-3Signs
+5 - Community and Civics
+3 Signs
 closed
 open
 exit
@@ -177,7 +193,8 @@ down
 men
 women
 
-3Sizes
+8 - Shopping and Clothes Unit
+3 Sizes
 shopping
 small
 too long
@@ -187,7 +204,8 @@ extra large
 too big
 large
 
-3Traffic
+4 - Transportation
+3 Traffic
 bus stop
 walk
 no smoking
@@ -197,7 +215,8 @@ men’s restroom
 women’s restroom
 don’t walk
 
-4Jobs
+3 - Jobs
+4 Jobs
 newspaper
 help wanted
 computer
@@ -209,7 +228,8 @@ part time
 full time
 ask
 
-4Directions
+4 - Transportation
+4 Directions
 up
 down
 in
@@ -219,7 +239,8 @@ out
 across
 straight
 
-4Emergency
+5 - Community and Civics
+4 Emergency
 fire truck
 help
 thief
@@ -229,7 +250,8 @@ firefighter
 fire
 officer
 
-4Problems
+2 - Housing
+4 Problems
 toilet
 window
 broken
@@ -241,7 +263,8 @@ fridge
 shower
 leaking
 
-4School
+7 - Family and School
+4 School
 backpack
 computer
 glue
@@ -253,7 +276,8 @@ scissors
 marker
 eraser
 
-4Weather
+8 - Shopping and Clothes Unit
+4 Weather
 sandals
 scarf
 shorts
@@ -263,7 +287,8 @@ hat
 swimming suit
 mittens
 
-5CIty
+5 - Community and Civics
+5 City
 vote
 flag
 capitol
@@ -273,7 +298,8 @@ state
 country
 president
 
-5Interviews
+3 - Jobs
+5 Interviews
 signature
 date
 social security number
@@ -283,7 +309,8 @@ phone number
 interview
 handshake
 
-5Shopping
+8 - Shopping and Clothes Unit
+5 Shopping
 backpack
 right
 downstairs
@@ -293,7 +320,8 @@ upstairs
 men
 women
 
-5Taking
+4 - Transportation
+5 Taking
 transfer
 cord
 fare
@@ -303,7 +331,8 @@ wait
 no food
 no music
 
-5Teacher
+7 - Family and School
+5 Teacher
 point
 look
 show me
@@ -314,3 +343,133 @@ circle
 read
 listen
 say
+
+1 - Health
+1 Body
+chest
+legs
+stomach
+hand
+back
+head
+feet
+arm
+neck
+
+1 - Health
+2 Ailments
+rash
+vomit
+fever
+cut
+sore throat
+cough
+runny nose
+ache
+
+1 - Health
+3 Medicine
+aspirin
+ointment
+band aid
+shot
+pills
+cough syrup
+cream
+drops
+
+1 - Health
+4 Appointment
+appointment
+interpreter
+doctor
+date of birth
+phone number
+address
+social security number
+insurance card
+
+1 - Health
+5 Emergency
+911
+ambulance
+cut
+broken
+clinic
+heart attack
+hospital
+passed out
+
+6 - Food and Health
+1 Food
+carrots
+pork
+fish
+apple
+chicken
+rice
+grapes
+pears
+potato
+pears
+milk
+
+6 - Food and Health
+2 More Food
+cheese
+yogurt
+onion
+beef
+tomato
+bread
+beans
+broccoli
+noodles
+
+6 - Food and Health
+3 Restaurant
+cookie
+coffee
+pop
+ice cream
+hamburger
+salad
+cake
+tea
+fries
+
+6 - Food and Health
+4 Cake
+eggs
+bake
+baking powder
+milk
+heat
+sugar
+vanilla
+butter
+flour
+
+6 - Food and Health
+5 Healthy
+grain
+protein
+fruit
+vegetables
+dairy
+sleeping
+walk
+run
+playing
+
+6 - Food and Health
+6 Cooking
+cook
+open
+cut
+mix
+peel
+microwave
+oven
+boil
+wash

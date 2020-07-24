@@ -1,4 +1,4 @@
-import csv
+import csv, os
 from bs4 import BeautifulSoup
 
 header_starter = """<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -75,9 +75,9 @@ console.log(window.orientation);
       if (ui.draggable.attr("name") == $(this).attr("name")){
           ui.draggable.draggable("disable");
           // $(this).css({"background-color":"#70db70"});
-					$(this).removeClass("wrong_answer");
-					$(this).addClass("correct_answer");
-                    $(this:last-child).remove()
+    		$(this).removeClass("wrong_answer");
+    		$(this).addClass("correct_answer");
+            document.getElementById(ui.draggable.attr("id") + "_sound_button").remove();
           $(this).html(ui.draggable.html());
           ui.draggable.hide();
   //$(this).toggleClass("source");
@@ -149,8 +149,7 @@ def produce_blob(filename,wordlist, soup):
             answers_div.append(create_audio(col,index))
             index += 1
     soup.body.append(answers_div)
-    print(soup.prettify())
-    quit()
+    return filename, soup.prettify()
 
 seven = [["1a","1b","1c"],["2a","2b","2c"],["3a"]]
 eight = [["1a","1b","1c"],["2a","2b","2c"],["3a","3b"]]
@@ -159,9 +158,6 @@ ten = [["1a","1b","1c","1d"],["2a","2b","2c","2d"],["3a"]]
 eleven = [["1a","1b","1c","1d"],["2a","2b","2c","2d"],["3a","3b","3c"]]
 twelve = [["1a","1b","1c","1d"],["2a","2b","2c","2d"],["3a","3b","3c","3d"]]
 
-def writefile(blobtup):
-    with open(blobtup[0] + ".html", "w") as fp:
-        fp.write(blobtup[1])
 
 def create_header(filename):
     header = soup.new_tag("div",id="header")
@@ -210,18 +206,35 @@ def create_audio(col,index):
     #soup.body.append(audio_div)
     return audio_div
 
+
+def writefile(blobtup):
+    #print(blobtup[0])
+    with open(blobtup[0] + ".html", "w") as fp:
+        fp.write(blobtup[1])
+
 #For ALL FILES
 with open("AllMatching.csv","r") as fp:
     allmatching = fp.read().split("\n\n")
 
 #print(allmatching)
+matchingindexjson = {}
 
 for lesson in allmatching:
     lesson = list(filter(None,lesson.split("\n")))
+    base = "../"
+    unit = lesson.pop(0)
     name = lesson.pop(0)
+    if unit not in matchingindexjson:
+        matchingindexjson[unit] = []
+    matchingindexjson[unit].append(os.path.join(unit,name) + ".html")
+    name = os.path.join(base,unit,name)
     wordlist = lesson
     soup = BeautifulSoup(header_starter,"html5lib")
-    produce_blob(name, wordlist, soup)
+    #produce_blob(name, wordlist, soup)
     #print(name)
     #print([x.decode("utf-8").replace(u'\u2019', "'") for x in wordlist])
-    #writefile(produce_blob(name, wordlist))
+    writefile(produce_blob(name, wordlist,soup))
+
+#For matchingindex.html
+
+print(matchingindexjson)
