@@ -77,6 +77,7 @@ console.log(window.orientation);
           // $(this).css({"background-color":"#70db70"});
 					$(this).removeClass("wrong_answer");
 					$(this).addClass("correct_answer");
+                    $(this:last-child).remove()
           $(this).html(ui.draggable.html());
           ui.draggable.hide();
   //$(this).toggleClass("source");
@@ -107,7 +108,7 @@ console.log(window.orientation);
 
 def produce_blob(filename,wordlist, soup):
     index = 0
-    print(wordlist)
+    #print(wordlist)
     if len(wordlist) == 7:
         columns = seven
     elif len(wordlist) == 8:
@@ -132,9 +133,12 @@ def produce_blob(filename,wordlist, soup):
     #Add pictures and destinations table
     picture_and_destinations_table = soup.new_tag("table", id="pictures_and_destinations")
     for row in columns:
-        picture_and_destinations_table.append(soup.new_tag("tr", id = str(columns.index(row) + 1)))
+        tr = soup.new_tag("tr", id = str(columns.index(row) + 1))
+        picture_and_destinations_table.append(tr)
+        #picture_and_destinations_table.append(soup.new_tag("tr", id = str(columns.index(row) + 1)))
         for col in row:
-            picture_and_destinations_table.find(id = str(columns.index(row) + 1)).append(create_pic_dest_td(col,index))
+            tr.append(create_pic_dest_td(col,index))
+            index += 1
     soup.body.append(picture_and_destinations_table)
     #Add answers_div
     index = 0
@@ -145,7 +149,7 @@ def produce_blob(filename,wordlist, soup):
             answers_div.append(create_audio(col,index))
             index += 1
     soup.body.append(answers_div)
-    print(soup)
+    print(soup.prettify())
     quit()
 
 seven = [["1a","1b","1c"],["2a","2b","2c"],["3a"]]
@@ -172,7 +176,7 @@ def create_header(filename):
     return header
 
 def create_pic_dest_td(col, index):
-    td = soup.new_tag("tr", id = str(col))
+    td = soup.new_tag("td", id = str(col))
     image_div = soup.new_tag("div")
     image_div["class"] = "image"
     image = soup.new_tag("img", src="imgs/" + wordlist[index] + ".jpg")
@@ -200,7 +204,7 @@ def create_answer(col, index):
 
 def create_audio(col,index):
     base_src = "../../units/sounds/"
-    audio_div = soup.new_tag("audio", id=wordlist[index], src=base_src + wordlist[index] +".mp3")
+    audio_div = soup.new_tag("audio", id=wordlist[index] + "_audio", src=base_src + wordlist[index] +".mp3")
     audio_div["name"] = str(col[0]) + """,""" + str(col[1])
     audio_div["class"] = "source_audio"
     #soup.body.append(audio_div)

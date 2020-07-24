@@ -12,10 +12,6 @@
   border-style:outset;
 }
 
-th {
-    background-color: blue;
-}
-
 #header {
     background-color: #abcdef;
     border: solid black 3pt;
@@ -82,9 +78,7 @@ th {
   display:flex;
   flex-wrap: wrap;
 }
-#answers_div div{
 
-  }
 .source {
   text-align: center;
   border-style: dotted;
