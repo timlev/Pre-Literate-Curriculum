@@ -2,47 +2,15 @@
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
+		<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+		 <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" type="text/css" href="../../drag_n_drop_theme.css" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet">
-<link href="../../sliders.cs" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
 <script src="../../jquery.ui.touch-punch.min.js"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
-<style>
-* {
-    font-family: 'Didact Gothic', sans-serif;
-    }
-#pictures_and_destinations {
-  border: 1px;
-  }
-
-#answers {
-  width: 90vw;
-}
-#answers {
-  text-align: center;
-  border-style: dotted;
-}
-
-.image {
-margin: auto;
-}
-
-.image > img {
- margin: auto;
- height:15vh;
- border-style: solid;
-}
-.destination {
-  border-style: dashed;
-  text-align: center;
-  padding: 10px;
-  }
-
-</style>
 <script>
 var i = 0;
 var all_words = document.getElementsByClassName("source");
@@ -144,14 +112,6 @@ window.words_remaining = 0;
 </head>
 
 <body>
-  <div id="header">
-    <label class="switch">
-     <input id="toggleinteraction" type="checkbox">
-     <span class="slider round"></span>
-   </label>
-   <span id="toggleinteractiontext">Lock</span>
-   <button id="playallbutton" onclick="play_sound(play_sound)">Play All Words</button>
- </div>
 <table id="pictures_and_destinations">
 <tr>
 <tr>
@@ -199,44 +159,45 @@ window.words_remaining = 0;
 </td>
 </tr>
 </table>
+<div>Answers</div>
 <table id="answers">
 <tr>
-<td id="1a">
+<tr><td id="1a">
 <div name="1,a" id="chest" class="source">chest</div>
 <audio name="1,a" id="chest_audio" class="source_audio" src="../../units/sounds/chest.mp3"></audio>
-</td>
-<td id="1b">
+</td></tr>
+<tr><td id="1b">
 <div name="1,b" id="legs" class="source">legs</div>
 <audio name="1,b" id="legs_audio" class="source_audio" src="../../units/sounds/legs.mp3"></audio>
-</td>
-<td id="1c">
+</td></tr>
+<tr><td id="1c">
 <div name="1,c" id="stomach" class="source">stomach</div>
 <audio name="1,c" id="stomach_audio" class="source_audio" src="../../units/sounds/stomach.mp3"></audio>
-</td>
-<td id="2a">
+</td></tr>
+<tr><td id="2a">
 <div name="2,a" id="hand" class="source">hand</div>
 <audio name="2,a" id="hand_audio" class="source_audio" src="../../units/sounds/hand.mp3"></audio>
-</td>
-<td id="2b">
+</td></tr>
+<tr><td id="2b">
 <div name="2,b" id="back" class="source">back</div>
 <audio name="2,b" id="back_audio" class="source_audio" src="../../units/sounds/back.mp3"></audio>
-</td>
-<td id="2c">
+</td></tr>
+<tr><td id="2c">
 <div name="2,c" id="head" class="source">head</div>
 <audio name="2,c" id="head_audio" class="source_audio" src="../../units/sounds/head.mp3"></audio>
-</td>
-<td id="3a">
+</td></tr>
+<tr><td id="3a">
 <div name="3,a" id="feet" class="source">feet</div>
 <audio name="3,a" id="feet_audio" class="source_audio" src="../../units/sounds/feet.mp3"></audio>
-</td>
-<td id="3b">
+</td></tr>
+<tr><td id="3b">
 <div name="3,b" id="arm" class="source">arm</div>
 <audio name="3,b" id="arm_audio" class="source_audio" src="../../units/sounds/arm.mp3"></audio>
-</td>
-<td id="3c">
+</td></tr>
+<tr><td id="3c">
 <div name="3,c" id="neck" class="source">neck</div>
 <audio name="3,c" id="neck_audio" class="source_audio" class="source_audio" src="../../units/sounds/neck.mp3"></audio>
-</td>
+</td></tr>
 </tr>
 </table>
 
