@@ -6,16 +6,22 @@ def produce_blob(filename,wordlist, soup):
     #print(wordlist)
     if len(wordlist) == 7:
         columns = seven
+        p_and_d_table_id = "threecolspictures_and_destinations"
     elif len(wordlist) == 8:
         columns = eight
+        p_and_d_table_id = "threecolspictures_and_destinations"
     elif len(wordlist) == 9:
         columns = nine
+        p_and_d_table_id = "threecolspictures_and_destinations"
     elif len(wordlist) == 10:
         columns = ten
+        p_and_d_table_id = "fourcolspictures_and_destinations"
     elif len(wordlist) == 11:
         columns = eleven
+        p_and_d_table_id = "fourcolspictures_and_destinations"
     elif len(wordlist) == 12:
         columns = twelve
+        p_and_d_table_id = "fourcolspictures_and_destinations"
     else:
         print("Wordlist is too large")
         quit()
@@ -26,7 +32,7 @@ def produce_blob(filename,wordlist, soup):
     #Add header
     soup.body.append(create_header(filename))
     #Add pictures and destinations table
-    picture_and_destinations_table = soup.new_tag("table", id="pictures_and_destinations")
+    picture_and_destinations_table = soup.new_tag("table", id= p_and_d_table_id )
     for row in columns:
         tr = soup.new_tag("tr", id = str(columns.index(row) + 1))
         picture_and_destinations_table.append(tr)
@@ -44,6 +50,7 @@ def produce_blob(filename,wordlist, soup):
             answers_div.append(create_audio(col,index))
             index += 1
     soup.body.append(answers_div)
+    add_scripts()
     return filename, soup.prettify()
 
 seven = [["1a","1b","1c"],["2a","2b","2c"],["3a"]]
@@ -102,7 +109,10 @@ def create_audio(col,index):
     #soup.body.append(audio_div)
     return audio_div
 
-
+def add_scripts():
+	script = soup.new_tag("script", src="../js/matching.js")
+	soup.body.append(script)
+	
 def writefile(blobtup):
     #print(blobtup[0])
     with open(blobtup[0] + ".html", "w") as fp:
