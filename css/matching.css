@@ -62,6 +62,7 @@ body {
   margin-right: auto;
   border-style:outset;
   vertical-align: bottom;
+  color: black;
 }
 
 #fourcolspictures_and_destinations td img {
@@ -85,6 +86,7 @@ body {
   font-size: 40px;
   min-height: 43px;
   vertical-align: bottom;
+  color: black;
   }
 
 #header {
@@ -125,7 +127,7 @@ body {
   width: 75%;
   font-family:'Sen', sans-serif;
   color: #DED7F7;
-  text-size: 45px;
+  font-size: 45px;
 
 }
 
@@ -178,7 +180,14 @@ body {
   height : 40px;
 }
 .correct_answer {
-  background-color: #5D38DB;
+  background-color: #d6cef2;
+/*
+  background-color: #ece8fa;
+*/
+  color: black;
+}
+.correct_answer div *{
+  color: black;
 }
 
 .wrong_answer {
