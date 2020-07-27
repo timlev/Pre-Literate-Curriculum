@@ -160,7 +160,7 @@ body {
   min-height:80px;
   color: #625E70;
   display: flex;
-  margin: 16px;
+  margin: 5px 15px 5px;
   justify-content: space-between;
 
 }

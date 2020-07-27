@@ -1,0 +1,31 @@
+h2 {
+    font-family:'Sen', sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+h3 {
+    background-color: #5D38DB;
+    width: 100vw;
+    padding-left: 5px;
+    text-align: left;
+    display: block;
+    align-items: left;
+    font-family:'Sen', sans-serif;
+    color: #DED7F7;
+    font-size: 1.5em;
+}
+
+li {
+    font-family:'Sen', sans-serif;
+    color: #625E70;
+    font-size: 1.5em;
+}
+
+a:link {
+    color: #5D38DB;
+}
+
+a:visited {
+    color: #625E70;
+}

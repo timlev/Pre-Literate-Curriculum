@@ -97,7 +97,7 @@ def create_answer(col, index):
     text_div = soup.new_tag("div")
     text_div.string = wordlist[index]
     answer_div.append(text_div)
-    sound_button_image = soup.new_tag("img", src="../images/volume_up-24px_purple.png", id=str(wordlist[index]) + "_sound_button")
+    sound_button_image = soup.new_tag("img", src="../images/volume_up-24px.svg", id=str(wordlist[index]) + "_sound_button")
     sound_button_image["class"] = "sound_button"
     answer_div.append(sound_button_image)
     #soup.body.append(answer_div)
