@@ -64,9 +64,11 @@ twelve = [["1a","1b","1c","1d"],["2a","2b","2c","2d"],["3a","3b","3c","3d"]]
 def create_header(filename):
     header = soup.new_tag("div",id="header")
     back_button = soup.new_tag("div", id="back_button")
-    back_button.string = "Back"
-    img = soup.new_tag("img", src="../images/back_button.png")
+    img = soup.new_tag("img", src="../images/arrow_back-24px.png")
     back_button.append(img)
+    back_button_text = soup.new_tag("div", id="back_button_text")
+    back_button_text.string = "Back"
+    back_button.append(back_button_text)
     header.append(back_button)
     header_title = soup.new_tag("div", id="title")
     header_title.string = os.path.basename(filename)
@@ -95,7 +97,7 @@ def create_answer(col, index):
     text_div = soup.new_tag("div")
     text_div.string = wordlist[index]
     answer_div.append(text_div)
-    sound_button_image = soup.new_tag("img", src="../images/sound_button.png", id=str(wordlist[index]) + "_sound_button")
+    sound_button_image = soup.new_tag("img", src="../images/volume_up-24px_purple.png", id=str(wordlist[index]) + "_sound_button")
     sound_button_image["class"] = "sound_button"
     answer_div.append(sound_button_image)
     #soup.body.append(answer_div)

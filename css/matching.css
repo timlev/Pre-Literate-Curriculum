@@ -1,7 +1,29 @@
+body {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        font-size: 100%;
+    }
+
 .playing {
-    background-color: gray;
+    background-color: #E2E6F2;
 }
 
+.overlay_correct {
+  box-sizing: border-box;
+  height: 96px;
+  width: 96px;
+  border: 2px solid #90EB9B;
+  background-color: rgba(255,255,255,0.85);
+}
+
+.overlay_wrong {
+  box-sizing: border-box;
+  height: 96px;
+  width: 96px;
+  border: 2px solid #F45757;
+  background-color: rgba(255,255,255,0.8);
+}
 
 #threecolspictures_and_destinations {
     width: 99vw;
@@ -18,14 +40,13 @@
 
 #threecolspictures_and_destinations td img {
  height:75%;
- max-height:20vh;
+ max-height:19vh;
  width:auto;
  max-width: 33vw;
  margin-left: auto;
  margin-right: auto;
  display:grid;
  align-content: center;
- border: 1px;
 }
 
 #fourcolspictures_and_destinations {
@@ -36,58 +57,75 @@
 #fourcolspictures_and_destinations td {
   height:30%;
   width: 25%;
-  max-width: 25vw;
+  max-width: 24vw;
   margin-left: auto;
   margin-right: auto;
   border-style:outset;
+  vertical-align: bottom;
 }
 
 #fourcolspictures_and_destinations td img {
  height:75%;
- max-height:20vh;
+ max-height:19vh;
  width:auto;
- max-width: 25vw;
+ max-width: 24vw;
  margin-left: auto;
  margin-right: auto;
  display:grid;
  align-content: center;
- border: 1px;
 }
 
 .destination {
-  border-style: dashed;
+  border-style: solid;
+  border-color: #E2E6F2;
+  background-color: white;
   text-align: center;
-  padding: 1px;
   height:22%;
   font-family: 'Sen', sans-serif;
-  min-height: 45px;
+  font-size: 40px;
+  min-height: 43px;
+  vertical-align: bottom;
   }
 
 #header {
-    background-color: #abcdef;
-    border: solid black 3pt;
-    border-radius: 25px;
-    font-size: 45px;
+    background-color: #5D38DB;
+    border: 1px solid #E2E6F2;
+    font-size: 30px;
+    width: 100vw;
     padding-left: 5px;
     text-align: left;
+    display: block;
+    align-items: left;
     font-family:'Sen', sans-serif;
-    text-shadow: 0px 1px 1px #fff;
+    color: #DED7F7;
 }
 
 #back_button{
-  display:inline-block;
-  width: auto;
+  display: inline-block;
+  width: 20%;
+  color: #DED7F7;
+  align-self: center;
+}
+
+#back_button_text {
+  display: inline-block;
 }
 
 #back_button img {
   display:inline-block;
-  height: 50px;
+  align-self: center;
+  height: 25px;
+  margin: auto;
 }
 
 #title {
-  text-align: center;
   display:inline-block;
-  min-width: 40vw;
+  align-items: center;
+  text-align: center;
+  width: 75%;
+  font-family:'Sen', sans-serif;
+  color: #DED7F7;
+  text-size: 45px;
 
 }
 
@@ -115,13 +153,14 @@
 
 .source {
   text-align: center;
-  border-style: dotted;
+  border-style: solid;
   overflow : wrap;
   font-family: 'Sen', sans-serif;
   font-size: 80px;
   min-height:80px;
-
+  color: #625E70;
   display: flex;
+  margin: 16px;
   justify-content: space-between;
 
 }
@@ -134,12 +173,12 @@
 #answers_div div img {
   display: inline-block;
   padding-right: 5px;
-    justify-content: space-between;
-    align-self: center;
+  justify-content: space-between;
+  align-self: center;
+  height : 40px;
 }
-
 .correct_answer {
-  background-color: #70db70;
+  background-color: #5D38DB;
 }
 
 .wrong_answer {
