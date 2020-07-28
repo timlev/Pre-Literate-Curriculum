@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>I Take the Bus Questions</title>
+<script>
+function check_answer(e){
+  console.log(e.id);
+  if (e.id == "correct"){
+    e.style.backgroundColor = "#03fc41";
+    e.style.borderRadius = "50%";
+  }
+  else {
+    e.style.backgroundColor = "red";
+    e.style.borderRadius = "50%";
+    e.style.color = "white";
+
+  }
+}
+</script>
+ <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+ <style>
+* {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 1.2em;
+}
+.button {
+  background-color: gray;
+}
+.button:hover{
+  background-color: #03dffc;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<table>
+<tr>
+  <td>Name: ________________ Date:<span><script> document.write(new Date().toLocaleDateString()); </script></span></td>
+</tr>
+<tr>
+  <td>1. I take the bus to the bank.</td> <td onclick="check_answer(this);" class="button" id="correct">Yes</td><td>&ensp;&ensp;</td><td onclick="check_answer(this);" class="button" >No</td><td id="status"></td>
+</tr>
+
+<tr>
+  <td>2. I take the bus to the hospital.</td> <td onclick="check_answer(this);" class="button" id="correct">Yes</td><td>&ensp;&ensp;</td><td onclick="check_answer(this);" class="button" >No</td><td id="status"></td>
+</tr>
+
+<tr>
+  <td>3. I take the car to the store.</td> <td onclick="check_answer(this);" class="button" >Yes</td><td>&ensp;&ensp;</td><td id="correct" onclick="check_answer(this);" class="button" >No</td><td id="status"></td>
+</tr>
+
+<tr>
+  <td>4. I take the bus home.</td> <td onclick="check_answer(this);" class="button" id="correct">Yes</td><td>&ensp;&ensp;</td><td onclick="check_answer(this);" class="button" >No</td><td id="status"></td>
+</tr>
+
+<tr>
+  <td>5. I take the truck to the school.</td> <td onclick="check_answer(this);" class="button">Yes</td><td>&ensp;&ensp;</td><td id="correct" onclick="check_answer(this);" class="button" >No</td><td id="status"></td>
+</tr>
+
+<tr>
+  <td>6. I take the bus to the police station.</td> <td onclick="check_answer(this);" class="button" id="correct">Yes</td><td>&ensp;&ensp;</td><td onclick="check_answer(this);" class="button" >No</td><td id="status"></td>
+</tr>
+
+<tr>
+  <td>7. I take the van to the library.</td> <td onclick="check_answer(this);" class="button" >Yes</td><td>&ensp;&ensp;</td><td id="correct" onclick="check_answer(this);" class="button" >No</td><td id="status"></td>
+</tr>
+
+</table>
+</body>
+</html>
