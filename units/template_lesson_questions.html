@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Questions</title>
+ <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+ <style>
+* {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 1.2em;
+}
+.button {
+  background-color: gray;
+}
+.button:hover{
+  background-color: #03dffc;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<table id="table">
+<tr>
+  <td>Name: ________________ Date:<span><script> document.write(new Date().toLocaleDateString()); </script></span></td>
+</tr>
+
+</table>
+<script>
+function check_answer(event){
+  console.log(event.target);
+  e = document.getElementById(event.target.id);
+  console.log(e.getAttribute("name"));
+  if (e.getAttribute("name") == "correct"){
+    e.style.backgroundColor = "#03fc41";
+    e.style.borderRadius = "50%";
+  }
+  else {
+    e.style.backgroundColor = "red";
+    e.style.borderRadius = "50%";
+    e.style.color = "white";
+
+  }
+}
+
+
+lesson = {"1. I read the stop sign.":"yes",
+"2. I read the school crossing sign.":"yes",
+"3. I read the library sign.":"no",
+"4. I read the bus stop sign.":"yes",
+"5. I read the store sign.":"no",
+"6. I read the men's restroom sign.":"yes",
+"7. I read the no smoking sign.":"yes"}
+
+function loadLesson(lesson){
+  for (item in lesson){
+    tr = document.createElement("tr");
+    td = document.createElement("td");
+    td.innerText = item;
+    td_yes = document.createElement("td");
+    td_yes.setAttribute("class", "button");
+    td_yes.addEventListener("click", check_answer);
+    td_yes.innerText = "Yes";
+    td_yes.id = item + "_yes";
+    
+    gap = document.createElement("td");
+    gap.innerHTML = "<td>&ensp;&ensp;</td>";
+    
+    td_no = document.createElement("td");
+    td_no.setAttribute("class", "button");
+    td_no.addEventListener("click", check_answer);
+    td_no.innerText = "No";
+    td_no.id = item + "_no";
+    console.log(item)
+    console.log(lesson[item]);
+    if (lesson[item] == "yes"){
+      td_yes.setAttribute("name","correct");
+      td_no.setAttribute("name","wrong");
+    }
+    else {
+      td_no.setAttribute("name","correct");
+      td_yes.setAttribute("name","wrong");
+    }
+    tr.appendChild(td);
+    tr.appendChild(td_yes);
+    tr.appendChild(gap);
+    tr.appendChild(td_no);
+    document.getElementById("table").appendChild(tr);
+  }
+  
+
+}
+
+document.onload = loadLesson(lesson);
+</script>
+</body>
+</html>
