@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://fonts.googleapis.com/css2?family=Sen&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/matching.css" rel="stylesheet" type="text/css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js">
+  </script>
+  <script src="../js/jquery.ui.touch-punch.min.js">
+  </script>
+  <title>
+   ../Newcomer/mall
+  </title>
+ </head>
+ <body>
+  <div id="header">
+   <div id="back_button">
+    <img src="../images/arrow_back-24px.png"/>
+    <div id="back_button_text">
+     Back
+    </div>
+   </div>
+   <div id="title">
+    mall
+   </div>
+  </div>
+  <table id="fourcolspictures_and_destinations">
+   <tr id="1">
+    <td id="1a">
+     <div class="image">
+      <img src="imgs/escalator.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,a">
+     </div>
+    </td>
+    <td id="1b">
+     <div class="image">
+      <img src="imgs/restroom.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,b">
+     </div>
+    </td>
+    <td id="1c">
+     <div class="image">
+      <img src="imgs/soda.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,c">
+     </div>
+    </td>
+    <td id="1d">
+     <div class="image">
+      <img src="imgs/arcade.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="2">
+    <td id="2a">
+     <div class="image">
+      <img src="imgs/snack bar.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,a">
+     </div>
+    </td>
+    <td id="2b">
+     <div class="image">
+      <img src="imgs/movie theater.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,b">
+     </div>
+    </td>
+    <td id="2c">
+     <div class="image">
+      <img src="imgs/shoe store.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,c">
+     </div>
+    </td>
+    <td id="2d">
+     <div class="image">
+      <img src="imgs/clothes store.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="3">
+    <td id="3a">
+     <div class="image">
+      <img src="imgs/ice cream.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,a">
+     </div>
+    </td>
+    <td id="3b">
+     <div class="image">
+      <img src="imgs/exit.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,b">
+     </div>
+    </td>
+    <td id="3c">
+     <div class="image">
+      <img src="imgs/pizza.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,c">
+     </div>
+    </td>
+    <td id="3d">
+     <div class="image">
+      <img src="imgs/fries.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,d">
+     </div>
+    </td>
+   </tr>
+  </table>
+  <div id="answers_div">
+   <div class="source" id="fries" name="3,d">
+    <div>
+     fries
+    </div>
+    <img class="sound_button" id="fries_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="ice cream" name="3,a">
+    <div>
+     ice cream
+    </div>
+    <img class="sound_button" id="ice cream_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="shoe store_audio" name="2,c" src="../units/sounds/shoe store.mp3">
+   </audio>
+   <div class="source" id="soda" name="1,c">
+    <div>
+     soda
+    </div>
+    <img class="sound_button" id="soda_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="restroom_audio" name="1,b" src="../units/sounds/restroom.mp3">
+   </audio>
+   <audio class="source_audio" id="clothes store_audio" name="2,d" src="../units/sounds/clothes store.mp3">
+   </audio>
+   <audio class="source_audio" id="movie theater_audio" name="2,b" src="../units/sounds/movie theater.mp3">
+   </audio>
+   <div class="source" id="shoe store" name="2,c">
+    <div>
+     shoe store
+    </div>
+    <img class="sound_button" id="shoe store_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="snack bar_audio" name="2,a" src="../units/sounds/snack bar.mp3">
+   </audio>
+   <div class="source" id="arcade" name="1,d">
+    <div>
+     arcade
+    </div>
+    <img class="sound_button" id="arcade_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="escalator_audio" name="1,a" src="../units/sounds/escalator.mp3">
+   </audio>
+   <div class="source" id="escalator" name="1,a">
+    <div>
+     escalator
+    </div>
+    <img class="sound_button" id="escalator_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="fries_audio" name="3,d" src="../units/sounds/fries.mp3">
+   </audio>
+   <div class="source" id="movie theater" name="2,b">
+    <div>
+     movie theater
+    </div>
+    <img class="sound_button" id="movie theater_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="restroom" name="1,b">
+    <div>
+     restroom
+    </div>
+    <img class="sound_button" id="restroom_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="exit_audio" name="3,b" src="../units/sounds/exit.mp3">
+   </audio>
+   <audio class="source_audio" id="arcade_audio" name="1,d" src="../units/sounds/arcade.mp3">
+   </audio>
+   <div class="source" id="exit" name="3,b">
+    <div>
+     exit
+    </div>
+    <img class="sound_button" id="exit_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="pizza" name="3,c">
+    <div>
+     pizza
+    </div>
+    <img class="sound_button" id="pizza_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="pizza_audio" name="3,c" src="../units/sounds/pizza.mp3">
+   </audio>
+   <audio class="source_audio" id="soda_audio" name="1,c" src="../units/sounds/soda.mp3">
+   </audio>
+   <div class="source" id="clothes store" name="2,d">
+    <div>
+     clothes store
+    </div>
+    <img class="sound_button" id="clothes store_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="ice cream_audio" name="3,a" src="../units/sounds/ice cream.mp3">
+   </audio>
+   <div class="source" id="snack bar" name="2,a">
+    <div>
+     snack bar
+    </div>
+    <img class="sound_button" id="snack bar_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+  </div>
+  <script src="../js/matching.js">
+  </script>
+ </body>
+</html>

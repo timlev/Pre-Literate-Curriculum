@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://fonts.googleapis.com/css2?family=Sen&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/matching.css" rel="stylesheet" type="text/css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js">
+  </script>
+  <script src="../js/jquery.ui.touch-punch.min.js">
+  </script>
+  <title>
+   ../Newcomer/home
+  </title>
+ </head>
+ <body>
+  <div id="header">
+   <div id="back_button">
+    <img src="../images/arrow_back-24px.png"/>
+    <div id="back_button_text">
+     Back
+    </div>
+   </div>
+   <div id="title">
+    home
+   </div>
+  </div>
+  <table id="fourcolspictures_and_destinations">
+   <tr id="1">
+    <td id="1a">
+     <div class="image">
+      <img src="imgs/dresser.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,a">
+     </div>
+    </td>
+    <td id="1b">
+     <div class="image">
+      <img src="imgs/stove.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,b">
+     </div>
+    </td>
+    <td id="1c">
+     <div class="image">
+      <img src="imgs/sofa.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,c">
+     </div>
+    </td>
+    <td id="1d">
+     <div class="image">
+      <img src="imgs/bed.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="2">
+    <td id="2a">
+     <div class="image">
+      <img src="imgs/brush.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,a">
+     </div>
+    </td>
+    <td id="2b">
+     <div class="image">
+      <img src="imgs/sleep.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,b">
+     </div>
+    </td>
+    <td id="2c">
+     <div class="image">
+      <img src="imgs/get dressed.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,c">
+     </div>
+    </td>
+    <td id="2d">
+     <div class="image">
+      <img src="imgs/cook.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="3">
+    <td id="3a">
+     <div class="image">
+      <img src="imgs/eat.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,a">
+     </div>
+    </td>
+    <td id="3b">
+     <div class="image">
+      <img src="imgs/sink.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,b">
+     </div>
+    </td>
+    <td id="3c">
+     <div class="image">
+      <img src="imgs/table.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,c">
+     </div>
+    </td>
+    <td id="3d">
+     <div class="image">
+      <img src="imgs/wash.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,d">
+     </div>
+    </td>
+   </tr>
+  </table>
+  <div id="answers_div">
+   <audio class="source_audio" id="table_audio" name="3,c" src="../units/sounds/table.mp3">
+   </audio>
+   <audio class="source_audio" id="sink_audio" name="3,b" src="../units/sounds/sink.mp3">
+   </audio>
+   <div class="source" id="bed" name="1,d">
+    <div>
+     bed
+    </div>
+    <img class="sound_button" id="bed_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="table" name="3,c">
+    <div>
+     table
+    </div>
+    <img class="sound_button" id="table_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="dresser_audio" name="1,a" src="../units/sounds/dresser.mp3">
+   </audio>
+   <audio class="source_audio" id="stove_audio" name="1,b" src="../units/sounds/stove.mp3">
+   </audio>
+   <div class="source" id="eat" name="3,a">
+    <div>
+     eat
+    </div>
+    <img class="sound_button" id="eat_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="cook" name="2,d">
+    <div>
+     cook
+    </div>
+    <img class="sound_button" id="cook_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="wash_audio" name="3,d" src="../units/sounds/wash.mp3">
+   </audio>
+   <audio class="source_audio" id="eat_audio" name="3,a" src="../units/sounds/eat.mp3">
+   </audio>
+   <div class="source" id="stove" name="1,b">
+    <div>
+     stove
+    </div>
+    <img class="sound_button" id="stove_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="sofa" name="1,c">
+    <div>
+     sofa
+    </div>
+    <img class="sound_button" id="sofa_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="brush_audio" name="2,a" src="../units/sounds/brush.mp3">
+   </audio>
+   <audio class="source_audio" id="get dressed_audio" name="2,c" src="../units/sounds/get dressed.mp3">
+   </audio>
+   <div class="source" id="brush" name="2,a">
+    <div>
+     brush
+    </div>
+    <img class="sound_button" id="brush_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="cook_audio" name="2,d" src="../units/sounds/cook.mp3">
+   </audio>
+   <div class="source" id="dresser" name="1,a">
+    <div>
+     dresser
+    </div>
+    <img class="sound_button" id="dresser_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="sleep" name="2,b">
+    <div>
+     sleep
+    </div>
+    <img class="sound_button" id="sleep_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="wash" name="3,d">
+    <div>
+     wash
+    </div>
+    <img class="sound_button" id="wash_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="sink" name="3,b">
+    <div>
+     sink
+    </div>
+    <img class="sound_button" id="sink_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="get dressed" name="2,c">
+    <div>
+     get dressed
+    </div>
+    <img class="sound_button" id="get dressed_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="bed_audio" name="1,d" src="../units/sounds/bed.mp3">
+   </audio>
+   <audio class="source_audio" id="sleep_audio" name="2,b" src="../units/sounds/sleep.mp3">
+   </audio>
+   <audio class="source_audio" id="sofa_audio" name="1,c" src="../units/sounds/sofa.mp3">
+   </audio>
+  </div>
+  <script src="../js/matching.js">
+  </script>
+ </body>
+</html>

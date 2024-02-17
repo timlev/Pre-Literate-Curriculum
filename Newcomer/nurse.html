@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://fonts.googleapis.com/css2?family=Sen&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/matching.css" rel="stylesheet" type="text/css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js">
+  </script>
+  <script src="../js/jquery.ui.touch-punch.min.js">
+  </script>
+  <title>
+   ../Newcomer/nurse
+  </title>
+ </head>
+ <body>
+  <div id="header">
+   <div id="back_button">
+    <img src="../images/arrow_back-24px.png"/>
+    <div id="back_button_text">
+     Back
+    </div>
+   </div>
+   <div id="title">
+    nurse
+   </div>
+  </div>
+  <table id="fourcolspictures_and_destinations">
+   <tr id="1">
+    <td id="1a">
+     <div class="image">
+      <img src="imgs/bandage.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,a">
+     </div>
+    </td>
+    <td id="1b">
+     <div class="image">
+      <img src="imgs/cough.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,b">
+     </div>
+    </td>
+    <td id="1c">
+     <div class="image">
+      <img src="imgs/sore throat.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,c">
+     </div>
+    </td>
+    <td id="1d">
+     <div class="image">
+      <img src="imgs/tissues.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="2">
+    <td id="2a">
+     <div class="image">
+      <img src="imgs/blood.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,a">
+     </div>
+    </td>
+    <td id="2b">
+     <div class="image">
+      <img src="imgs/thermometer.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,b">
+     </div>
+    </td>
+    <td id="2c">
+     <div class="image">
+      <img src="imgs/fever.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,c">
+     </div>
+    </td>
+    <td id="2d">
+     <div class="image">
+      <img src="imgs/sneeze.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="3">
+    <td id="3a">
+     <div class="image">
+      <img src="imgs/cut.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,a">
+     </div>
+    </td>
+    <td id="3b">
+     <div class="image">
+      <img src="imgs/lie down.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,b">
+     </div>
+    </td>
+    <td id="3c">
+     <div class="image">
+      <img src="imgs/bump.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,c">
+     </div>
+    </td>
+    <td id="3d">
+     <div class="image">
+      <img src="imgs/stomachache.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,d">
+     </div>
+    </td>
+   </tr>
+  </table>
+  <div id="answers_div">
+   <audio class="source_audio" id="sneeze_audio" name="2,d" src="../units/sounds/sneeze.mp3">
+   </audio>
+   <div class="source" id="thermometer" name="2,b">
+    <div>
+     thermometer
+    </div>
+    <img class="sound_button" id="thermometer_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="lie down_audio" name="3,b" src="../units/sounds/lie down.mp3">
+   </audio>
+   <audio class="source_audio" id="bump_audio" name="3,c" src="../units/sounds/bump.mp3">
+   </audio>
+   <div class="source" id="sneeze" name="2,d">
+    <div>
+     sneeze
+    </div>
+    <img class="sound_button" id="sneeze_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="blood_audio" name="2,a" src="../units/sounds/blood.mp3">
+   </audio>
+   <div class="source" id="blood" name="2,a">
+    <div>
+     blood
+    </div>
+    <img class="sound_button" id="blood_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="thermometer_audio" name="2,b" src="../units/sounds/thermometer.mp3">
+   </audio>
+   <div class="source" id="cut" name="3,a">
+    <div>
+     cut
+    </div>
+    <img class="sound_button" id="cut_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="cut_audio" name="3,a" src="../units/sounds/cut.mp3">
+   </audio>
+   <div class="source" id="stomachache" name="3,d">
+    <div>
+     stomachache
+    </div>
+    <img class="sound_button" id="stomachache_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="lie down" name="3,b">
+    <div>
+     lie down
+    </div>
+    <img class="sound_button" id="lie down_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="sore throat" name="1,c">
+    <div>
+     sore throat
+    </div>
+    <img class="sound_button" id="sore throat_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="cough" name="1,b">
+    <div>
+     cough
+    </div>
+    <img class="sound_button" id="cough_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="sore throat_audio" name="1,c" src="../units/sounds/sore throat.mp3">
+   </audio>
+   <div class="source" id="bump" name="3,c">
+    <div>
+     bump
+    </div>
+    <img class="sound_button" id="bump_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="tissues_audio" name="1,d" src="../units/sounds/tissues.mp3">
+   </audio>
+   <audio class="source_audio" id="fever_audio" name="2,c" src="../units/sounds/fever.mp3">
+   </audio>
+   <div class="source" id="tissues" name="1,d">
+    <div>
+     tissues
+    </div>
+    <img class="sound_button" id="tissues_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="cough_audio" name="1,b" src="../units/sounds/cough.mp3">
+   </audio>
+   <audio class="source_audio" id="stomachache_audio" name="3,d" src="../units/sounds/stomachache.mp3">
+   </audio>
+   <div class="source" id="fever" name="2,c">
+    <div>
+     fever
+    </div>
+    <img class="sound_button" id="fever_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="bandage" name="1,a">
+    <div>
+     bandage
+    </div>
+    <img class="sound_button" id="bandage_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="bandage_audio" name="1,a" src="../units/sounds/bandage.mp3">
+   </audio>
+  </div>
+  <script src="../js/matching.js">
+  </script>
+ </body>
+</html>

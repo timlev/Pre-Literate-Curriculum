@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://fonts.googleapis.com/css2?family=Sen&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/matching.css" rel="stylesheet" type="text/css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js">
+  </script>
+  <script src="../js/jquery.ui.touch-punch.min.js">
+  </script>
+  <title>
+   ../Newcomer/school
+  </title>
+ </head>
+ <body>
+  <div id="header">
+   <div id="back_button">
+    <img src="../images/arrow_back-24px.png"/>
+    <div id="back_button_text">
+     Back
+    </div>
+   </div>
+   <div id="title">
+    school
+   </div>
+  </div>
+  <table id="fourcolspictures_and_destinations">
+   <tr id="1">
+    <td id="1a">
+     <div class="image">
+      <img src="imgs/car.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,a">
+     </div>
+    </td>
+    <td id="1b">
+     <div class="image">
+      <img src="imgs/principal.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,b">
+     </div>
+    </td>
+    <td id="1c">
+     <div class="image">
+      <img src="imgs/crossing guard.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,c">
+     </div>
+    </td>
+    <td id="1d">
+     <div class="image">
+      <img src="imgs/clock.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="2">
+    <td id="2a">
+     <div class="image">
+      <img src="imgs/ride.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,a">
+     </div>
+    </td>
+    <td id="2b">
+     <div class="image">
+      <img src="imgs/librarian.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,b">
+     </div>
+    </td>
+    <td id="2c">
+     <div class="image">
+      <img src="imgs/nurse.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,c">
+     </div>
+    </td>
+    <td id="2d">
+     <div class="image">
+      <img src="imgs/bus.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="3">
+    <td id="3a">
+     <div class="image">
+      <img src="imgs/student.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,a">
+     </div>
+    </td>
+    <td id="3b">
+     <div class="image">
+      <img src="imgs/bicycle.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,b">
+     </div>
+    </td>
+    <td id="3c">
+     <div class="image">
+      <img src="imgs/teacher.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,c">
+     </div>
+    </td>
+    <td id="3d">
+     <div class="image">
+      <img src="imgs/walk.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,d">
+     </div>
+    </td>
+   </tr>
+  </table>
+  <div id="answers_div">
+   <div class="source" id="student" name="3,a">
+    <div>
+     student
+    </div>
+    <img class="sound_button" id="student_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="ride" name="2,a">
+    <div>
+     ride
+    </div>
+    <img class="sound_button" id="ride_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="clock_audio" name="1,d" src="../units/sounds/clock.mp3">
+   </audio>
+   <audio class="source_audio" id="teacher_audio" name="3,c" src="../units/sounds/teacher.mp3">
+   </audio>
+   <div class="source" id="teacher" name="3,c">
+    <div>
+     teacher
+    </div>
+    <img class="sound_button" id="teacher_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="student_audio" name="3,a" src="../units/sounds/student.mp3">
+   </audio>
+   <div class="source" id="librarian" name="2,b">
+    <div>
+     librarian
+    </div>
+    <img class="sound_button" id="librarian_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="bicycle" name="3,b">
+    <div>
+     bicycle
+    </div>
+    <img class="sound_button" id="bicycle_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="clock" name="1,d">
+    <div>
+     clock
+    </div>
+    <img class="sound_button" id="clock_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="car_audio" name="1,a" src="../units/sounds/car.mp3">
+   </audio>
+   <div class="source" id="car" name="1,a">
+    <div>
+     car
+    </div>
+    <img class="sound_button" id="car_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="crossing guard" name="1,c">
+    <div>
+     crossing guard
+    </div>
+    <img class="sound_button" id="crossing guard_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="librarian_audio" name="2,b" src="../units/sounds/librarian.mp3">
+   </audio>
+   <audio class="source_audio" id="bicycle_audio" name="3,b" src="../units/sounds/bicycle.mp3">
+   </audio>
+   <audio class="source_audio" id="nurse_audio" name="2,c" src="../units/sounds/nurse.mp3">
+   </audio>
+   <audio class="source_audio" id="bus_audio" name="2,d" src="../units/sounds/bus.mp3">
+   </audio>
+   <div class="source" id="walk" name="3,d">
+    <div>
+     walk
+    </div>
+    <img class="sound_button" id="walk_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="crossing guard_audio" name="1,c" src="../units/sounds/crossing guard.mp3">
+   </audio>
+   <audio class="source_audio" id="principal_audio" name="1,b" src="../units/sounds/principal.mp3">
+   </audio>
+   <audio class="source_audio" id="walk_audio" name="3,d" src="../units/sounds/walk.mp3">
+   </audio>
+   <div class="source" id="bus" name="2,d">
+    <div>
+     bus
+    </div>
+    <img class="sound_button" id="bus_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="ride_audio" name="2,a" src="../units/sounds/ride.mp3">
+   </audio>
+   <div class="source" id="nurse" name="2,c">
+    <div>
+     nurse
+    </div>
+    <img class="sound_button" id="nurse_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="principal" name="1,b">
+    <div>
+     principal
+    </div>
+    <img class="sound_button" id="principal_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+  </div>
+  <script src="../js/matching.js">
+  </script>
+ </body>
+</html>

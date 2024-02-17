@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://fonts.googleapis.com/css2?family=Sen&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/matching.css" rel="stylesheet" type="text/css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js">
+  </script>
+  <script src="../js/jquery.ui.touch-punch.min.js">
+  </script>
+  <title>
+   ../Newcomer/grocery store and food
+  </title>
+ </head>
+ <body>
+  <div id="header">
+   <div id="back_button">
+    <img src="../images/arrow_back-24px.png"/>
+    <div id="back_button_text">
+     Back
+    </div>
+   </div>
+   <div id="title">
+    grocery store and food
+   </div>
+  </div>
+  <table id="fourcolspictures_and_destinations">
+   <tr id="1">
+    <td id="1a">
+     <div class="image">
+      <img src="imgs/lettuce.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,a">
+     </div>
+    </td>
+    <td id="1b">
+     <div class="image">
+      <img src="imgs/meat.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,b">
+     </div>
+    </td>
+    <td id="1c">
+     <div class="image">
+      <img src="imgs/cheese.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,c">
+     </div>
+    </td>
+    <td id="1d">
+     <div class="image">
+      <img src="imgs/box.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="2">
+    <td id="2a">
+     <div class="image">
+      <img src="imgs/broccoli.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,a">
+     </div>
+    </td>
+    <td id="2b">
+     <div class="image">
+      <img src="imgs/seafood.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,b">
+     </div>
+    </td>
+    <td id="2c">
+     <div class="image">
+      <img src="imgs/pineapple.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,c">
+     </div>
+    </td>
+    <td id="2d">
+     <div class="image">
+      <img src="imgs/bags.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="3">
+    <td id="3a">
+     <div class="image">
+      <img src="imgs/bananas.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,a">
+     </div>
+    </td>
+    <td id="3b">
+     <div class="image">
+      <img src="imgs/list.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,b">
+     </div>
+    </td>
+    <td id="3c">
+     <div class="image">
+      <img src="imgs/orange.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,c">
+     </div>
+    </td>
+    <td id="3d">
+     <div class="image">
+      <img src="imgs/cart.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,d">
+     </div>
+    </td>
+   </tr>
+  </table>
+  <div id="answers_div">
+   <audio class="source_audio" id="bags_audio" name="2,d" src="../units/sounds/bags.mp3">
+   </audio>
+   <div class="source" id="pineapple" name="2,c">
+    <div>
+     pineapple
+    </div>
+    <img class="sound_button" id="pineapple_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="list" name="3,b">
+    <div>
+     list
+    </div>
+    <img class="sound_button" id="list_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="box" name="1,d">
+    <div>
+     box
+    </div>
+    <img class="sound_button" id="box_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="cart" name="3,d">
+    <div>
+     cart
+    </div>
+    <img class="sound_button" id="cart_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="orange_audio" name="3,c" src="../units/sounds/orange.mp3">
+   </audio>
+   <audio class="source_audio" id="cart_audio" name="3,d" src="../units/sounds/cart.mp3">
+   </audio>
+   <audio class="source_audio" id="list_audio" name="3,b" src="../units/sounds/list.mp3">
+   </audio>
+   <div class="source" id="orange" name="3,c">
+    <div>
+     orange
+    </div>
+    <img class="sound_button" id="orange_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="lettuce_audio" name="1,a" src="../units/sounds/lettuce.mp3">
+   </audio>
+   <div class="source" id="broccoli" name="2,a">
+    <div>
+     broccoli
+    </div>
+    <img class="sound_button" id="broccoli_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="bags" name="2,d">
+    <div>
+     bags
+    </div>
+    <img class="sound_button" id="bags_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="meat" name="1,b">
+    <div>
+     meat
+    </div>
+    <img class="sound_button" id="meat_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="lettuce" name="1,a">
+    <div>
+     lettuce
+    </div>
+    <img class="sound_button" id="lettuce_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="bananas" name="3,a">
+    <div>
+     bananas
+    </div>
+    <img class="sound_button" id="bananas_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="bananas_audio" name="3,a" src="../units/sounds/bananas.mp3">
+   </audio>
+   <div class="source" id="cheese" name="1,c">
+    <div>
+     cheese
+    </div>
+    <img class="sound_button" id="cheese_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="seafood" name="2,b">
+    <div>
+     seafood
+    </div>
+    <img class="sound_button" id="seafood_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="broccoli_audio" name="2,a" src="../units/sounds/broccoli.mp3">
+   </audio>
+   <audio class="source_audio" id="box_audio" name="1,d" src="../units/sounds/box.mp3">
+   </audio>
+   <audio class="source_audio" id="cheese_audio" name="1,c" src="../units/sounds/cheese.mp3">
+   </audio>
+   <audio class="source_audio" id="meat_audio" name="1,b" src="../units/sounds/meat.mp3">
+   </audio>
+   <audio class="source_audio" id="seafood_audio" name="2,b" src="../units/sounds/seafood.mp3">
+   </audio>
+   <audio class="source_audio" id="pineapple_audio" name="2,c" src="../units/sounds/pineapple.mp3">
+   </audio>
+  </div>
+  <script src="../js/matching.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://fonts.googleapis.com/css2?family=Sen&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/matching.css" rel="stylesheet" type="text/css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js">
+  </script>
+  <script src="../js/jquery.ui.touch-punch.min.js">
+  </script>
+  <title>
+   ../Newcomer/library
+  </title>
+ </head>
+ <body>
+  <div id="header">
+   <div id="back_button">
+    <img src="../images/arrow_back-24px.png"/>
+    <div id="back_button_text">
+     Back
+    </div>
+   </div>
+   <div id="title">
+    library
+   </div>
+  </div>
+  <table id="fourcolspictures_and_destinations">
+   <tr id="1">
+    <td id="1a">
+     <div class="image">
+      <img src="imgs/call number.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,a">
+     </div>
+    </td>
+    <td id="1b">
+     <div class="image">
+      <img src="imgs/check out.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,b">
+     </div>
+    </td>
+    <td id="1c">
+     <div class="image">
+      <img src="imgs/computer.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,c">
+     </div>
+    </td>
+    <td id="1d">
+     <div class="image">
+      <img src="imgs/magazine.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="2">
+    <td id="2a">
+     <div class="image">
+      <img src="imgs/bookshelves.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,a">
+     </div>
+    </td>
+    <td id="2b">
+     <div class="image">
+      <img src="imgs/library card.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,b">
+     </div>
+    </td>
+    <td id="2c">
+     <div class="image">
+      <img src="imgs/dictionary.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,c">
+     </div>
+    </td>
+    <td id="2d">
+     <div class="image">
+      <img src="imgs/video tape.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="3">
+    <td id="3a">
+     <div class="image">
+      <img src="imgs/atlas.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,a">
+     </div>
+    </td>
+    <td id="3b">
+     <div class="image">
+      <img src="imgs/newspaper.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,b">
+     </div>
+    </td>
+    <td id="3c">
+     <div class="image">
+      <img src="imgs/return.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,c">
+     </div>
+    </td>
+    <td id="3d">
+     <div class="image">
+      <img src="imgs/due date.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,d">
+     </div>
+    </td>
+   </tr>
+  </table>
+  <div id="answers_div">
+   <audio class="source_audio" id="library card_audio" name="2,b" src="../units/sounds/library card.mp3">
+   </audio>
+   <div class="source" id="library card" name="2,b">
+    <div>
+     library card
+    </div>
+    <img class="sound_button" id="library card_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="computer" name="1,c">
+    <div>
+     computer
+    </div>
+    <img class="sound_button" id="computer_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="magazine" name="1,d">
+    <div>
+     magazine
+    </div>
+    <img class="sound_button" id="magazine_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="due date_audio" name="3,d" src="../units/sounds/due date.mp3">
+   </audio>
+   <audio class="source_audio" id="call number_audio" name="1,a" src="../units/sounds/call number.mp3">
+   </audio>
+   <div class="source" id="check out" name="1,b">
+    <div>
+     check out
+    </div>
+    <img class="sound_button" id="check out_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="computer_audio" name="1,c" src="../units/sounds/computer.mp3">
+   </audio>
+   <audio class="source_audio" id="newspaper_audio" name="3,b" src="../units/sounds/newspaper.mp3">
+   </audio>
+   <audio class="source_audio" id="return_audio" name="3,c" src="../units/sounds/return.mp3">
+   </audio>
+   <div class="source" id="newspaper" name="3,b">
+    <div>
+     newspaper
+    </div>
+    <img class="sound_button" id="newspaper_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="atlas_audio" name="3,a" src="../units/sounds/atlas.mp3">
+   </audio>
+   <div class="source" id="dictionary" name="2,c">
+    <div>
+     dictionary
+    </div>
+    <img class="sound_button" id="dictionary_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="bookshelves_audio" name="2,a" src="../units/sounds/bookshelves.mp3">
+   </audio>
+   <div class="source" id="atlas" name="3,a">
+    <div>
+     atlas
+    </div>
+    <img class="sound_button" id="atlas_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="call number" name="1,a">
+    <div>
+     call number
+    </div>
+    <img class="sound_button" id="call number_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="video tape" name="2,d">
+    <div>
+     video tape
+    </div>
+    <img class="sound_button" id="video tape_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="check out_audio" name="1,b" src="../units/sounds/check out.mp3">
+   </audio>
+   <audio class="source_audio" id="magazine_audio" name="1,d" src="../units/sounds/magazine.mp3">
+   </audio>
+   <div class="source" id="return" name="3,c">
+    <div>
+     return
+    </div>
+    <img class="sound_button" id="return_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="video tape_audio" name="2,d" src="../units/sounds/video tape.mp3">
+   </audio>
+   <audio class="source_audio" id="dictionary_audio" name="2,c" src="../units/sounds/dictionary.mp3">
+   </audio>
+   <div class="source" id="bookshelves" name="2,a">
+    <div>
+     bookshelves
+    </div>
+    <img class="sound_button" id="bookshelves_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="due date" name="3,d">
+    <div>
+     due date
+    </div>
+    <img class="sound_button" id="due date_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+  </div>
+  <script src="../js/matching.js">
+  </script>
+ </body>
+</html>

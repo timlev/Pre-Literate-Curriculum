@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://fonts.googleapis.com/css2?family=Sen&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/matching.css" rel="stylesheet" type="text/css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js">
+  </script>
+  <script src="../js/jquery.ui.touch-punch.min.js">
+  </script>
+  <title>
+   ../Newcomer/city places
+  </title>
+ </head>
+ <body>
+  <div id="header">
+   <div id="back_button">
+    <img src="../images/arrow_back-24px.png"/>
+    <div id="back_button_text">
+     Back
+    </div>
+   </div>
+   <div id="title">
+    city places
+   </div>
+  </div>
+  <table id="fourcolspictures_and_destinations">
+   <tr id="1">
+    <td id="1a">
+     <div class="image">
+      <img src="imgs/litter.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,a">
+     </div>
+    </td>
+    <td id="1b">
+     <div class="image">
+      <img src="imgs/bench.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,b">
+     </div>
+    </td>
+    <td id="1c">
+     <div class="image">
+      <img src="imgs/railroad.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,c">
+     </div>
+    </td>
+    <td id="1d">
+     <div class="image">
+      <img src="imgs/skyscrapers.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="2">
+    <td id="2a">
+     <div class="image">
+      <img src="imgs/factory.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,a">
+     </div>
+    </td>
+    <td id="2b">
+     <div class="image">
+      <img src="imgs/highway.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,b">
+     </div>
+    </td>
+    <td id="2c">
+     <div class="image">
+      <img src="imgs/park.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,c">
+     </div>
+    </td>
+    <td id="2d">
+     <div class="image">
+      <img src="imgs/subway.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="3">
+    <td id="3a">
+     <div class="image">
+      <img src="imgs/smokestack.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,a">
+     </div>
+    </td>
+    <td id="3b">
+     <div class="image">
+      <img src="imgs/street cleaner.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,b">
+     </div>
+    </td>
+    <td id="3c">
+     <div class="image">
+      <img src="imgs/garbage truck.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,c">
+     </div>
+    </td>
+    <td id="3d">
+     <div class="image">
+      <img src="imgs/airport.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,d">
+     </div>
+    </td>
+   </tr>
+  </table>
+  <div id="answers_div">
+   <div class="source" id="smokestack" name="3,a">
+    <div>
+     smokestack
+    </div>
+    <img class="sound_button" id="smokestack_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="bench_audio" name="1,b" src="../units/sounds/bench.mp3">
+   </audio>
+   <div class="source" id="airport" name="3,d">
+    <div>
+     airport
+    </div>
+    <img class="sound_button" id="airport_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="garbage truck" name="3,c">
+    <div>
+     garbage truck
+    </div>
+    <img class="sound_button" id="garbage truck_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="bench" name="1,b">
+    <div>
+     bench
+    </div>
+    <img class="sound_button" id="bench_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="airport_audio" name="3,d" src="../units/sounds/airport.mp3">
+   </audio>
+   <audio class="source_audio" id="railroad_audio" name="1,c" src="../units/sounds/railroad.mp3">
+   </audio>
+   <div class="source" id="skyscrapers" name="1,d">
+    <div>
+     skyscrapers
+    </div>
+    <img class="sound_button" id="skyscrapers_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="highway_audio" name="2,b" src="../units/sounds/highway.mp3">
+   </audio>
+   <audio class="source_audio" id="factory_audio" name="2,a" src="../units/sounds/factory.mp3">
+   </audio>
+   <audio class="source_audio" id="garbage truck_audio" name="3,c" src="../units/sounds/garbage truck.mp3">
+   </audio>
+   <div class="source" id="subway" name="2,d">
+    <div>
+     subway
+    </div>
+    <img class="sound_button" id="subway_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="railroad" name="1,c">
+    <div>
+     railroad
+    </div>
+    <img class="sound_button" id="railroad_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="litter_audio" name="1,a" src="../units/sounds/litter.mp3">
+   </audio>
+   <div class="source" id="factory" name="2,a">
+    <div>
+     factory
+    </div>
+    <img class="sound_button" id="factory_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="skyscrapers_audio" name="1,d" src="../units/sounds/skyscrapers.mp3">
+   </audio>
+   <div class="source" id="park" name="2,c">
+    <div>
+     park
+    </div>
+    <img class="sound_button" id="park_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="highway" name="2,b">
+    <div>
+     highway
+    </div>
+    <img class="sound_button" id="highway_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="litter" name="1,a">
+    <div>
+     litter
+    </div>
+    <img class="sound_button" id="litter_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="subway_audio" name="2,d" src="../units/sounds/subway.mp3">
+   </audio>
+   <audio class="source_audio" id="street cleaner_audio" name="3,b" src="../units/sounds/street cleaner.mp3">
+   </audio>
+   <audio class="source_audio" id="park_audio" name="2,c" src="../units/sounds/park.mp3">
+   </audio>
+   <div class="source" id="street cleaner" name="3,b">
+    <div>
+     street cleaner
+    </div>
+    <img class="sound_button" id="street cleaner_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="smokestack_audio" name="3,a" src="../units/sounds/smokestack.mp3">
+   </audio>
+  </div>
+  <script src="../js/matching.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <link href="https://fonts.googleapis.com/css2?family=Sen&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/matching.css" rel="stylesheet" type="text/css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js">
+  </script>
+  <script src="../js/jquery.ui.touch-punch.min.js">
+  </script>
+  <title>
+   ../Newcomer/playground
+  </title>
+ </head>
+ <body>
+  <div id="header">
+   <div id="back_button">
+    <img src="../images/arrow_back-24px.png"/>
+    <div id="back_button_text">
+     Back
+    </div>
+   </div>
+   <div id="title">
+    playground
+   </div>
+  </div>
+  <table id="fourcolspictures_and_destinations">
+   <tr id="1">
+    <td id="1a">
+     <div class="image">
+      <img src="imgs/kick.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,a">
+     </div>
+    </td>
+    <td id="1b">
+     <div class="image">
+      <img src="imgs/throw.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,b">
+     </div>
+    </td>
+    <td id="1c">
+     <div class="image">
+      <img src="imgs/swing.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,c">
+     </div>
+    </td>
+    <td id="1d">
+     <div class="image">
+      <img src="imgs/bars.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="1,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="2">
+    <td id="2a">
+     <div class="image">
+      <img src="imgs/bounce.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,a">
+     </div>
+    </td>
+    <td id="2b">
+     <div class="image">
+      <img src="imgs/catch.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,b">
+     </div>
+    </td>
+    <td id="2c">
+     <div class="image">
+      <img src="imgs/slide.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,c">
+     </div>
+    </td>
+    <td id="2d">
+     <div class="image">
+      <img src="imgs/climb.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="2,d">
+     </div>
+    </td>
+   </tr>
+   <tr id="3">
+    <td id="3a">
+     <div class="image">
+      <img src="imgs/seesaw.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,a">
+     </div>
+    </td>
+    <td id="3b">
+     <div class="image">
+      <img src="imgs/run.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,b">
+     </div>
+    </td>
+    <td id="3c">
+     <div class="image">
+      <img src="imgs/ball.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,c">
+     </div>
+    </td>
+    <td id="3d">
+     <div class="image">
+      <img src="imgs/fall.jpg"/>
+     </div>
+     <div class="destination" id="droppable" name="3,d">
+     </div>
+    </td>
+   </tr>
+  </table>
+  <div id="answers_div">
+   <audio class="source_audio" id="fall_audio" name="3,d" src="../units/sounds/fall.mp3">
+   </audio>
+   <audio class="source_audio" id="kick_audio" name="1,a" src="../units/sounds/kick.mp3">
+   </audio>
+   <audio class="source_audio" id="throw_audio" name="1,b" src="../units/sounds/throw.mp3">
+   </audio>
+   <div class="source" id="fall" name="3,d">
+    <div>
+     fall
+    </div>
+    <img class="sound_button" id="fall_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="catch_audio" name="2,b" src="../units/sounds/catch.mp3">
+   </audio>
+   <audio class="source_audio" id="slide_audio" name="2,c" src="../units/sounds/slide.mp3">
+   </audio>
+   <div class="source" id="bounce" name="2,a">
+    <div>
+     bounce
+    </div>
+    <img class="sound_button" id="bounce_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="climb_audio" name="2,d" src="../units/sounds/climb.mp3">
+   </audio>
+   <audio class="source_audio" id="run_audio" name="3,b" src="../units/sounds/run.mp3">
+   </audio>
+   <div class="source" id="climb" name="2,d">
+    <div>
+     climb
+    </div>
+    <img class="sound_button" id="climb_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="throw" name="1,b">
+    <div>
+     throw
+    </div>
+    <img class="sound_button" id="throw_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="seesaw" name="3,a">
+    <div>
+     seesaw
+    </div>
+    <img class="sound_button" id="seesaw_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="slide" name="2,c">
+    <div>
+     slide
+    </div>
+    <img class="sound_button" id="slide_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="seesaw_audio" name="3,a" src="../units/sounds/seesaw.mp3">
+   </audio>
+   <div class="source" id="swing" name="1,c">
+    <div>
+     swing
+    </div>
+    <img class="sound_button" id="swing_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="ball" name="3,c">
+    <div>
+     ball
+    </div>
+    <img class="sound_button" id="ball_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="catch" name="2,b">
+    <div>
+     catch
+    </div>
+    <img class="sound_button" id="catch_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="ball_audio" name="3,c" src="../units/sounds/ball.mp3">
+   </audio>
+   <div class="source" id="bars" name="1,d">
+    <div>
+     bars
+    </div>
+    <img class="sound_button" id="bars_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <audio class="source_audio" id="bounce_audio" name="2,a" src="../units/sounds/bounce.mp3">
+   </audio>
+   <audio class="source_audio" id="bars_audio" name="1,d" src="../units/sounds/bars.mp3">
+   </audio>
+   <audio class="source_audio" id="swing_audio" name="1,c" src="../units/sounds/swing.mp3">
+   </audio>
+   <div class="source" id="kick" name="1,a">
+    <div>
+     kick
+    </div>
+    <img class="sound_button" id="kick_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+   <div class="source" id="run" name="3,b">
+    <div>
+     run
+    </div>
+    <img class="sound_button" id="run_sound_button" src="../images/volume_up-24px.svg"/>
+   </div>
+  </div>
+  <script src="../js/matching.js">
+  </script>
+ </body>
+</html>
